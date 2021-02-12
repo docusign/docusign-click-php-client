@@ -574,6 +574,31 @@ class GetClickwrapsOptions
         return $this;
     }
     /**
+      * $shared 
+      * @var string
+      */
+    protected $shared;
+
+    /**
+     * Gets shared
+     * @return string
+     */
+    public function getShared()
+    {
+        return $this->shared;
+    }
+  
+    /**
+     * Sets shared
+     * @param string $shared 
+     * @return $this
+     */
+    public function setShared($shared)
+    {
+        $this->shared = $shared;
+        return $this;
+    }
+    /**
       * $status 
       * @var string
       */
@@ -1988,14 +2013,6 @@ class AccountsApi
         if ($clickwrap_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $clickwrap_id when calling getClickwrapAgreements');
         }
-        // verify the required parameter 'client_user_id' is set
-        if ($options === null && $options->getClientUserId() === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $client_user_id when calling getClickwrapAgreements');
-        }
-        // verify the required parameter 'status' is set
-        if ($options->getStatus() === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $status when calling getClickwrapAgreements');
-        }
         // parse inputs
         $resourcePath = "/v1/accounts/{accountId}/clickwraps/{clickwrapId}/users";
         $httpBody = '';
@@ -2258,10 +2275,6 @@ class AccountsApi
         if ($version_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $version_id when calling getClickwrapVersionAgreements');
         }
-        // verify the required parameter 'client_user_id' is set
-        if ($options === null && $options->getClientUserId() === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $client_user_id when calling getClickwrapAgreements');
-        }
         // parse inputs
         $resourcePath = "/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionId}/users";
         $httpBody = '';
@@ -2409,10 +2422,6 @@ class AccountsApi
         // verify the required parameter 'version_number' is set
         if ($version_number === null) {
             throw new \InvalidArgumentException('Missing the required parameter $version_number when calling getClickwrapVersionAgreementsByNumber');
-        }
-        // verify the required parameter 'client_user_id' is set
-        if ($options === null && $options->getClientUserId() === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $client_user_id when calling getClickwrapAgreements');
         }
         // parse inputs
         $resourcePath = "/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionNumber}/users";
@@ -2806,6 +2815,10 @@ class AccountsApi
         // query params
         if ($options->getPageNumber() !== null) {
             $queryParams['page_number'] = $this->apiClient->getSerializer()->toQueryValue($options->getPageNumber());
+        }
+        // query params
+        if ($options->getShared() !== null) {
+            $queryParams['shared'] = $this->apiClient->getSerializer()->toQueryValue($options->getShared());
         }
         // query params
         if ($options->getStatus() !== null) {

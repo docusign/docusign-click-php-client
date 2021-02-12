@@ -61,7 +61,8 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
         'display_settings' => '\DocuSign\Click\Model\DisplaySettings',
         'documents' => '\DocuSign\Click\Model\Document[]',
         'fields_to_null' => 'string',
-        'is_majorversion' => 'bool',
+        'is_major_version' => 'bool',
+        'is_shared' => 'bool',
         'name' => 'string',
         'require_reacceptance' => 'bool',
         'scheduled_date' => 'object',
@@ -81,7 +82,8 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
         'display_settings' => null,
         'documents' => null,
         'fields_to_null' => null,
-        'is_majorversion' => null,
+        'is_major_version' => null,
+        'is_shared' => null,
         'name' => null,
         'require_reacceptance' => null,
         'scheduled_date' => null,
@@ -122,7 +124,8 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
         'display_settings' => 'displaySettings',
         'documents' => 'documents',
         'fields_to_null' => 'fieldsToNull',
-        'is_majorversion' => 'isMajorversion',
+        'is_major_version' => 'isMajorVersion',
+        'is_shared' => 'isShared',
         'name' => 'name',
         'require_reacceptance' => 'requireReacceptance',
         'scheduled_date' => 'scheduledDate',
@@ -142,7 +145,8 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
         'display_settings' => 'setDisplaySettings',
         'documents' => 'setDocuments',
         'fields_to_null' => 'setFieldsToNull',
-        'is_majorversion' => 'setIsMajorversion',
+        'is_major_version' => 'setIsMajorVersion',
+        'is_shared' => 'setIsShared',
         'name' => 'setName',
         'require_reacceptance' => 'setRequireReacceptance',
         'scheduled_date' => 'setScheduledDate',
@@ -162,7 +166,8 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
         'display_settings' => 'getDisplaySettings',
         'documents' => 'getDocuments',
         'fields_to_null' => 'getFieldsToNull',
-        'is_majorversion' => 'getIsMajorversion',
+        'is_major_version' => 'getIsMajorVersion',
+        'is_shared' => 'getIsShared',
         'name' => 'getName',
         'require_reacceptance' => 'getRequireReacceptance',
         'scheduled_date' => 'getScheduledDate',
@@ -236,7 +241,8 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
         $this->container['display_settings'] = isset($data['display_settings']) ? $data['display_settings'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
         $this->container['fields_to_null'] = isset($data['fields_to_null']) ? $data['fields_to_null'] : null;
-        $this->container['is_majorversion'] = isset($data['is_majorversion']) ? $data['is_majorversion'] : null;
+        $this->container['is_major_version'] = isset($data['is_major_version']) ? $data['is_major_version'] : null;
+        $this->container['is_shared'] = isset($data['is_shared']) ? $data['is_shared'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['require_reacceptance'] = isset($data['require_reacceptance']) ? $data['require_reacceptance'] : null;
         $this->container['scheduled_date'] = isset($data['scheduled_date']) ? $data['scheduled_date'] : null;
@@ -367,25 +373,49 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets is_majorversion
+     * Gets is_major_version
      *
      * @return bool
      */
-    public function getIsMajorversion()
+    public function getIsMajorVersion()
     {
-        return $this->container['is_majorversion'];
+        return $this->container['is_major_version'];
     }
 
     /**
-     * Sets is_majorversion
+     * Sets is_major_version
      *
-     * @param bool $is_majorversion 
+     * @param bool $is_major_version 
      *
      * @return $this
      */
-    public function setIsMajorversion($is_majorversion)
+    public function setIsMajorVersion($is_major_version)
     {
-        $this->container['is_majorversion'] = $is_majorversion;
+        $this->container['is_major_version'] = $is_major_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_shared
+     *
+     * @return bool
+     */
+    public function getIsShared()
+    {
+        return $this->container['is_shared'];
+    }
+
+    /**
+     * Sets is_shared
+     *
+     * @param bool $is_shared 
+     *
+     * @return $this
+     */
+    public function setIsShared($is_shared)
+    {
+        $this->container['is_shared'] = $is_shared;
 
         return $this;
     }
