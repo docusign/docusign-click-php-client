@@ -1,6 +1,6 @@
 <?php
 /**
- * Document
+ * DocumentData
  *
  * PHP version 7.4
  *
@@ -34,15 +34,16 @@ use \ArrayAccess;
 use DocuSign\Click\ObjectSerializer;
 
 /**
- * Document Class Doc Comment
+ * DocumentData Class Doc Comment
  *
  * @category    Class
+ * @description The object of data to be merged with the clickwrap document. A merged document must be created from Click&#39;s web editor and supports fullName, email, company, title and date.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Document implements ModelInterface, ArrayAccess
+class DocumentData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class Document implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'document';
+    protected static $swaggerModelName = 'documentData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +60,11 @@ class Document implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'document_base64' => '?string',
-        'document_html' => '?string',
-        'document_name' => '?string',
-        'file_extension' => '?string',
-        'order' => '?int'
+        'full_name' => '?string',
+        'email' => '?string',
+        'company' => '?string',
+        'job_title' => '?string',
+        'date' => '?string'
     ];
 
     /**
@@ -72,11 +73,11 @@ class Document implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'document_base64' => null,
-        'document_html' => null,
-        'document_name' => null,
-        'file_extension' => null,
-        'order' => 'int32'
+        'full_name' => null,
+        'email' => null,
+        'company' => null,
+        'job_title' => null,
+        'date' => null
     ];
 
     /**
@@ -106,11 +107,11 @@ class Document implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'document_base64' => 'documentBase64',
-        'document_html' => 'documentHtml',
-        'document_name' => 'documentName',
-        'file_extension' => 'fileExtension',
-        'order' => 'order'
+        'full_name' => 'fullName',
+        'email' => 'email',
+        'company' => 'company',
+        'job_title' => 'jobTitle',
+        'date' => 'date'
     ];
 
     /**
@@ -119,11 +120,11 @@ class Document implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'document_base64' => 'setDocumentBase64',
-        'document_html' => 'setDocumentHtml',
-        'document_name' => 'setDocumentName',
-        'file_extension' => 'setFileExtension',
-        'order' => 'setOrder'
+        'full_name' => 'setFullName',
+        'email' => 'setEmail',
+        'company' => 'setCompany',
+        'job_title' => 'setJobTitle',
+        'date' => 'setDate'
     ];
 
     /**
@@ -132,11 +133,11 @@ class Document implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'document_base64' => 'getDocumentBase64',
-        'document_html' => 'getDocumentHtml',
-        'document_name' => 'getDocumentName',
-        'file_extension' => 'getFileExtension',
-        'order' => 'getOrder'
+        'full_name' => 'getFullName',
+        'email' => 'getEmail',
+        'company' => 'getCompany',
+        'job_title' => 'getJobTitle',
+        'date' => 'getDate'
     ];
 
     /**
@@ -199,11 +200,11 @@ class Document implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['document_base64'] = isset($data['document_base64']) ? $data['document_base64'] : null;
-        $this->container['document_html'] = isset($data['document_html']) ? $data['document_html'] : null;
-        $this->container['document_name'] = isset($data['document_name']) ? $data['document_name'] : null;
-        $this->container['file_extension'] = isset($data['file_extension']) ? $data['file_extension'] : null;
-        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
+        $this->container['job_title'] = isset($data['job_title']) ? $data['job_title'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
     }
 
     /**
@@ -231,121 +232,121 @@ class Document implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets document_base64
+     * Gets full_name
      *
      * @return ?string
      */
-    public function getDocumentBase64()
+    public function getFullName()
     {
-        return $this->container['document_base64'];
+        return $this->container['full_name'];
     }
 
     /**
-     * Sets document_base64
+     * Sets full_name
      *
-     * @param ?string $document_base64 
+     * @param ?string $full_name The full name of the signer. This field is created in the UI editor for a Clickwrap document. Only required if present in the document.
      *
      * @return $this
      */
-    public function setDocumentBase64($document_base64)
+    public function setFullName($full_name)
     {
-        $this->container['document_base64'] = $document_base64;
+        $this->container['full_name'] = $full_name;
 
         return $this;
     }
 
     /**
-     * Gets document_html
+     * Gets email
      *
      * @return ?string
      */
-    public function getDocumentHtml()
+    public function getEmail()
     {
-        return $this->container['document_html'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets document_html
+     * Sets email
      *
-     * @param ?string $document_html 
+     * @param ?string $email The email address of the signer. This field is created in the UI editor for a Clickwrap document. Only required if present in the document.
      *
      * @return $this
      */
-    public function setDocumentHtml($document_html)
+    public function setEmail($email)
     {
-        $this->container['document_html'] = $document_html;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets document_name
+     * Gets company
      *
      * @return ?string
      */
-    public function getDocumentName()
+    public function getCompany()
     {
-        return $this->container['document_name'];
+        return $this->container['company'];
     }
 
     /**
-     * Sets document_name
+     * Sets company
      *
-     * @param ?string $document_name 
+     * @param ?string $company The company name of the signer. This field is created in the UI editor for a Clickwrap document. Only required if present in the document.
      *
      * @return $this
      */
-    public function setDocumentName($document_name)
+    public function setCompany($company)
     {
-        $this->container['document_name'] = $document_name;
+        $this->container['company'] = $company;
 
         return $this;
     }
 
     /**
-     * Gets file_extension
+     * Gets job_title
      *
      * @return ?string
      */
-    public function getFileExtension()
+    public function getJobTitle()
     {
-        return $this->container['file_extension'];
+        return $this->container['job_title'];
     }
 
     /**
-     * Sets file_extension
+     * Sets job_title
      *
-     * @param ?string $file_extension 
+     * @param ?string $job_title The job title of the signer. This field is created in the UI editor for a Clickwrap document. Only required if present in the document.
      *
      * @return $this
      */
-    public function setFileExtension($file_extension)
+    public function setJobTitle($job_title)
     {
-        $this->container['file_extension'] = $file_extension;
+        $this->container['job_title'] = $job_title;
 
         return $this;
     }
 
     /**
-     * Gets order
+     * Gets date
      *
-     * @return ?int
+     * @return ?string
      */
-    public function getOrder()
+    public function getDate()
     {
-        return $this->container['order'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets order
+     * Sets date
      *
-     * @param ?int $order 
+     * @param ?string $date A custom date for the contract. This field is created in the UI editor for a Clickwrap document. Only required if present in the document.
      *
      * @return $this
      */
-    public function setOrder($order)
+    public function setDate($date)
     {
-        $this->container['order'] = $order;
+        $this->container['date'] = $date;
 
         return $this;
     }
