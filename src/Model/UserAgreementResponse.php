@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -39,7 +39,7 @@ use DocuSign\Click\ObjectSerializer;
  * @category    Class
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The DocuSign eSignature PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class UserAgreementResponse implements ModelInterface, ArrayAccess
@@ -68,7 +68,6 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_html' => '?string',
         'created_on' => 'object',
         'declined_on' => 'object',
-        'document_data' => '\DocuSign\Click\Model\DocumentData',
         'documents' => '\DocuSign\Click\Model\Document[]',
         'metadata' => '?string',
         'settings' => '\DocuSign\Click\Model\DisplaySettings',
@@ -93,7 +92,6 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_html' => null,
         'created_on' => null,
         'declined_on' => null,
-        'document_data' => null,
         'documents' => null,
         'metadata' => null,
         'settings' => null,
@@ -139,7 +137,6 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_html' => 'consumerDisclosureHtml',
         'created_on' => 'createdOn',
         'declined_on' => 'declinedOn',
-        'document_data' => 'documentData',
         'documents' => 'documents',
         'metadata' => 'metadata',
         'settings' => 'settings',
@@ -164,7 +161,6 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_html' => 'setConsumerDisclosureHtml',
         'created_on' => 'setCreatedOn',
         'declined_on' => 'setDeclinedOn',
-        'document_data' => 'setDocumentData',
         'documents' => 'setDocuments',
         'metadata' => 'setMetadata',
         'settings' => 'setSettings',
@@ -189,7 +185,6 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_html' => 'getConsumerDisclosureHtml',
         'created_on' => 'getCreatedOn',
         'declined_on' => 'getDeclinedOn',
-        'document_data' => 'getDocumentData',
         'documents' => 'getDocuments',
         'metadata' => 'getMetadata',
         'settings' => 'getSettings',
@@ -268,7 +263,6 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         $this->container['consumer_disclosure_html'] = isset($data['consumer_disclosure_html']) ? $data['consumer_disclosure_html'] : null;
         $this->container['created_on'] = isset($data['created_on']) ? $data['created_on'] : null;
         $this->container['declined_on'] = isset($data['declined_on']) ? $data['declined_on'] : null;
-        $this->container['document_data'] = isset($data['document_data']) ? $data['document_data'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['settings'] = isset($data['settings']) ? $data['settings'] : null;
@@ -514,30 +508,6 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     public function setDeclinedOn($declined_on)
     {
         $this->container['declined_on'] = $declined_on;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_data
-     *
-     * @return \DocuSign\Click\Model\DocumentData
-     */
-    public function getDocumentData()
-    {
-        return $this->container['document_data'];
-    }
-
-    /**
-     * Sets document_data
-     *
-     * @param \DocuSign\Click\Model\DocumentData $document_data document_data
-     *
-     * @return $this
-     */
-    public function setDocumentData($document_data)
-    {
-        $this->container['document_data'] = $document_data;
 
         return $this;
     }

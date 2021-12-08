@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click\Model
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign eSignature Ruby Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -36,7 +36,7 @@ namespace DocuSign\Click\Model;
  * @category Interface
  * @package DocuSign\Click\Model
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The DocuSign eSignature Ruby Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 interface ModelInterface
