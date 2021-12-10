@@ -60,7 +60,6 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'client_user_id' => '?string',
-        'document_data' => '\DocuSign\Click\Model\DocumentData',
         'metadata' => '?string'
     ];
 
@@ -71,7 +70,6 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'client_user_id' => null,
-        'document_data' => null,
         'metadata' => null
     ];
 
@@ -103,7 +101,6 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'client_user_id' => 'clientUserId',
-        'document_data' => 'documentData',
         'metadata' => 'metadata'
     ];
 
@@ -114,7 +111,6 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'client_user_id' => 'setClientUserId',
-        'document_data' => 'setDocumentData',
         'metadata' => 'setMetadata'
     ];
 
@@ -125,7 +121,6 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'client_user_id' => 'getClientUserId',
-        'document_data' => 'getDocumentData',
         'metadata' => 'getMetadata'
     ];
 
@@ -190,7 +185,6 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['client_user_id'] = isset($data['client_user_id']) ? $data['client_user_id'] : null;
-        $this->container['document_data'] = isset($data['document_data']) ? $data['document_data'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
     }
 
@@ -238,30 +232,6 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     public function setClientUserId($client_user_id)
     {
         $this->container['client_user_id'] = $client_user_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets document_data
-     *
-     * @return \DocuSign\Click\Model\DocumentData
-     */
-    public function getDocumentData()
-    {
-        return $this->container['document_data'];
-    }
-
-    /**
-     * Sets document_data
-     *
-     * @param \DocuSign\Click\Model\DocumentData $document_data document_data
-     *
-     * @return $this
-     */
-    public function setDocumentData($document_data)
-    {
-        $this->container['document_data'] = $document_data;
 
         return $this;
     }
