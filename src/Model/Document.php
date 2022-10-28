@@ -60,9 +60,12 @@ class Document implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'document_base64' => '?string',
+        'document_display' => '?string',
         'document_html' => '?string',
         'document_name' => '?string',
         'file_extension' => '?string',
+        'must_read' => '?bool',
+        'must_view' => '?bool',
         'order' => '?int'
     ];
 
@@ -73,9 +76,12 @@ class Document implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'document_base64' => null,
+        'document_display' => null,
         'document_html' => null,
         'document_name' => null,
         'file_extension' => null,
+        'must_read' => null,
+        'must_view' => null,
         'order' => 'int32'
     ];
 
@@ -107,9 +113,12 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'document_base64' => 'documentBase64',
+        'document_display' => 'documentDisplay',
         'document_html' => 'documentHtml',
         'document_name' => 'documentName',
         'file_extension' => 'fileExtension',
+        'must_read' => 'mustRead',
+        'must_view' => 'mustView',
         'order' => 'order'
     ];
 
@@ -120,9 +129,12 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'document_base64' => 'setDocumentBase64',
+        'document_display' => 'setDocumentDisplay',
         'document_html' => 'setDocumentHtml',
         'document_name' => 'setDocumentName',
         'file_extension' => 'setFileExtension',
+        'must_read' => 'setMustRead',
+        'must_view' => 'setMustView',
         'order' => 'setOrder'
     ];
 
@@ -133,9 +145,12 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'document_base64' => 'getDocumentBase64',
+        'document_display' => 'getDocumentDisplay',
         'document_html' => 'getDocumentHtml',
         'document_name' => 'getDocumentName',
         'file_extension' => 'getFileExtension',
+        'must_read' => 'getMustRead',
+        'must_view' => 'getMustView',
         'order' => 'getOrder'
     ];
 
@@ -200,9 +215,12 @@ class Document implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['document_base64'] = isset($data['document_base64']) ? $data['document_base64'] : null;
+        $this->container['document_display'] = isset($data['document_display']) ? $data['document_display'] : null;
         $this->container['document_html'] = isset($data['document_html']) ? $data['document_html'] : null;
         $this->container['document_name'] = isset($data['document_name']) ? $data['document_name'] : null;
         $this->container['file_extension'] = isset($data['file_extension']) ? $data['file_extension'] : null;
+        $this->container['must_read'] = isset($data['must_read']) ? $data['must_read'] : null;
+        $this->container['must_view'] = isset($data['must_view']) ? $data['must_view'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
     }
 
@@ -250,6 +268,30 @@ class Document implements ModelInterface, ArrayAccess
     public function setDocumentBase64($document_base64)
     {
         $this->container['document_base64'] = $document_base64;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_display
+     *
+     * @return ?string
+     */
+    public function getDocumentDisplay()
+    {
+        return $this->container['document_display'];
+    }
+
+    /**
+     * Sets document_display
+     *
+     * @param ?string $document_display 
+     *
+     * @return $this
+     */
+    public function setDocumentDisplay($document_display)
+    {
+        $this->container['document_display'] = $document_display;
 
         return $this;
     }
@@ -327,6 +369,54 @@ class Document implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets must_read
+     *
+     * @return ?bool
+     */
+    public function getMustRead()
+    {
+        return $this->container['must_read'];
+    }
+
+    /**
+     * Sets must_read
+     *
+     * @param ?bool $must_read 
+     *
+     * @return $this
+     */
+    public function setMustRead($must_read)
+    {
+        $this->container['must_read'] = $must_read;
+
+        return $this;
+    }
+
+    /**
+     * Gets must_view
+     *
+     * @return ?bool
+     */
+    public function getMustView()
+    {
+        return $this->container['must_view'];
+    }
+
+    /**
+     * Sets must_view
+     *
+     * @param ?bool $must_view 
+     *
+     * @return $this
+     */
+    public function setMustView($must_view)
+    {
+        $this->container['must_view'] = $must_view;
+
+        return $this;
+    }
+
+    /**
      * Gets order
      *
      * @return ?int
@@ -356,6 +446,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -368,6 +459,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -381,6 +473,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -397,6 +490,7 @@ class Document implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

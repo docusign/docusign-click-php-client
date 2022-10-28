@@ -64,6 +64,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
         'clickwrap_name' => '?string',
         'clickwrap_version_id' => '?string',
         'created_time' => 'object',
+        'data_fields' => '\DocuSign\Click\Model\DataField[]',
         'last_modified' => 'object',
         'last_modified_by' => '?string',
         'owner_user_id' => '?string',
@@ -86,6 +87,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
         'clickwrap_name' => null,
         'clickwrap_version_id' => null,
         'created_time' => null,
+        'data_fields' => null,
         'last_modified' => null,
         'last_modified_by' => null,
         'owner_user_id' => null,
@@ -129,6 +131,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
         'clickwrap_name' => 'clickwrapName',
         'clickwrap_version_id' => 'clickwrapVersionId',
         'created_time' => 'createdTime',
+        'data_fields' => 'dataFields',
         'last_modified' => 'lastModified',
         'last_modified_by' => 'lastModifiedBy',
         'owner_user_id' => 'ownerUserId',
@@ -151,6 +154,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
         'clickwrap_name' => 'setClickwrapName',
         'clickwrap_version_id' => 'setClickwrapVersionId',
         'created_time' => 'setCreatedTime',
+        'data_fields' => 'setDataFields',
         'last_modified' => 'setLastModified',
         'last_modified_by' => 'setLastModifiedBy',
         'owner_user_id' => 'setOwnerUserId',
@@ -173,6 +177,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
         'clickwrap_name' => 'getClickwrapName',
         'clickwrap_version_id' => 'getClickwrapVersionId',
         'created_time' => 'getCreatedTime',
+        'data_fields' => 'getDataFields',
         'last_modified' => 'getLastModified',
         'last_modified_by' => 'getLastModifiedBy',
         'owner_user_id' => 'getOwnerUserId',
@@ -249,6 +254,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
         $this->container['clickwrap_name'] = isset($data['clickwrap_name']) ? $data['clickwrap_name'] : null;
         $this->container['clickwrap_version_id'] = isset($data['clickwrap_version_id']) ? $data['clickwrap_version_id'] : null;
         $this->container['created_time'] = isset($data['created_time']) ? $data['created_time'] : null;
+        $this->container['data_fields'] = isset($data['data_fields']) ? $data['data_fields'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
         $this->container['last_modified_by'] = isset($data['last_modified_by']) ? $data['last_modified_by'] : null;
         $this->container['owner_user_id'] = isset($data['owner_user_id']) ? $data['owner_user_id'] : null;
@@ -400,6 +406,30 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
     public function setCreatedTime($created_time)
     {
         $this->container['created_time'] = $created_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_fields
+     *
+     * @return \DocuSign\Click\Model\DataField[]
+     */
+    public function getDataFields()
+    {
+        return $this->container['data_fields'];
+    }
+
+    /**
+     * Sets data_fields
+     *
+     * @param \DocuSign\Click\Model\DataField[] $data_fields 
+     *
+     * @return $this
+     */
+    public function setDataFields($data_fields)
+    {
+        $this->container['data_fields'] = $data_fields;
 
         return $this;
     }
@@ -626,6 +656,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -638,6 +669,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -651,6 +683,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -667,6 +700,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

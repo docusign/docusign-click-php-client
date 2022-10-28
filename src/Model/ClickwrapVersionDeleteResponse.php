@@ -61,6 +61,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'clickwrap_version_id' => '?string',
         'created_time' => 'object',
+        'data_fields' => '\DocuSign\Click\Model\DataField[]',
         'deletion_message' => '?string',
         'deletion_success' => '?bool',
         'last_modified' => 'object',
@@ -82,6 +83,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'clickwrap_version_id' => null,
         'created_time' => null,
+        'data_fields' => null,
         'deletion_message' => null,
         'deletion_success' => null,
         'last_modified' => null,
@@ -124,6 +126,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'clickwrap_version_id' => 'clickwrapVersionId',
         'created_time' => 'createdTime',
+        'data_fields' => 'dataFields',
         'deletion_message' => 'deletionMessage',
         'deletion_success' => 'deletionSuccess',
         'last_modified' => 'lastModified',
@@ -145,6 +148,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
     protected static $setters = [
         'clickwrap_version_id' => 'setClickwrapVersionId',
         'created_time' => 'setCreatedTime',
+        'data_fields' => 'setDataFields',
         'deletion_message' => 'setDeletionMessage',
         'deletion_success' => 'setDeletionSuccess',
         'last_modified' => 'setLastModified',
@@ -166,6 +170,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
     protected static $getters = [
         'clickwrap_version_id' => 'getClickwrapVersionId',
         'created_time' => 'getCreatedTime',
+        'data_fields' => 'getDataFields',
         'deletion_message' => 'getDeletionMessage',
         'deletion_success' => 'getDeletionSuccess',
         'last_modified' => 'getLastModified',
@@ -241,6 +246,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
     {
         $this->container['clickwrap_version_id'] = isset($data['clickwrap_version_id']) ? $data['clickwrap_version_id'] : null;
         $this->container['created_time'] = isset($data['created_time']) ? $data['created_time'] : null;
+        $this->container['data_fields'] = isset($data['data_fields']) ? $data['data_fields'] : null;
         $this->container['deletion_message'] = isset($data['deletion_message']) ? $data['deletion_message'] : null;
         $this->container['deletion_success'] = isset($data['deletion_success']) ? $data['deletion_success'] : null;
         $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
@@ -322,6 +328,30 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
     public function setCreatedTime($created_time)
     {
         $this->container['created_time'] = $created_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_fields
+     *
+     * @return \DocuSign\Click\Model\DataField[]
+     */
+    public function getDataFields()
+    {
+        return $this->container['data_fields'];
+    }
+
+    /**
+     * Sets data_fields
+     *
+     * @param \DocuSign\Click\Model\DataField[] $data_fields 
+     *
+     * @return $this
+     */
+    public function setDataFields($data_fields)
+    {
+        $this->container['data_fields'] = $data_fields;
 
         return $this;
     }
@@ -596,6 +626,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -608,6 +639,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -621,6 +653,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -637,6 +670,7 @@ class ClickwrapVersionDeleteResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

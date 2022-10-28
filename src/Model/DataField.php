@@ -1,6 +1,6 @@
 <?php
 /**
- * ClickwrapVersionsResponse
+ * DataField
  *
  * PHP version 7.4
  *
@@ -34,7 +34,7 @@ use \ArrayAccess;
 use DocuSign\Click\ObjectSerializer;
 
 /**
- * ClickwrapVersionsResponse Class Doc Comment
+ * DataField Class Doc Comment
  *
  * @category    Class
  * @package     DocuSign\Click
@@ -42,7 +42,7 @@ use DocuSign\Click\ObjectSerializer;
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
+class DataField implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'clickwrapVersionsResponse';
+    protected static $swaggerModelName = 'dataField';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,9 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clickwraps' => '\DocuSign\Click\Model\ClickwrapVersionSummaryResponse[]',
-        'minimum_pages_remaining' => '?int',
-        'page' => '?int',
-        'page_size' => '?int'
+        'label' => '?string',
+        'name' => '?string',
+        'type' => '?string'
     ];
 
     /**
@@ -71,10 +70,9 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'clickwraps' => null,
-        'minimum_pages_remaining' => 'int32',
-        'page' => 'int32',
-        'page_size' => 'int32'
+        'label' => null,
+        'name' => null,
+        'type' => null
     ];
 
     /**
@@ -104,10 +102,9 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'clickwraps' => 'clickwraps',
-        'minimum_pages_remaining' => 'minimumPagesRemaining',
-        'page' => 'page',
-        'page_size' => 'pageSize'
+        'label' => 'label',
+        'name' => 'name',
+        'type' => 'type'
     ];
 
     /**
@@ -116,10 +113,9 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'clickwraps' => 'setClickwraps',
-        'minimum_pages_remaining' => 'setMinimumPagesRemaining',
-        'page' => 'setPage',
-        'page_size' => 'setPageSize'
+        'label' => 'setLabel',
+        'name' => 'setName',
+        'type' => 'setType'
     ];
 
     /**
@@ -128,10 +124,9 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'clickwraps' => 'getClickwraps',
-        'minimum_pages_remaining' => 'getMinimumPagesRemaining',
-        'page' => 'getPage',
-        'page_size' => 'getPageSize'
+        'label' => 'getLabel',
+        'name' => 'getName',
+        'type' => 'getType'
     ];
 
     /**
@@ -194,10 +189,9 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['clickwraps'] = isset($data['clickwraps']) ? $data['clickwraps'] : null;
-        $this->container['minimum_pages_remaining'] = isset($data['minimum_pages_remaining']) ? $data['minimum_pages_remaining'] : null;
-        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
-        $this->container['page_size'] = isset($data['page_size']) ? $data['page_size'] : null;
+        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -225,97 +219,73 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets clickwraps
+     * Gets label
      *
-     * @return \DocuSign\Click\Model\ClickwrapVersionSummaryResponse[]
+     * @return ?string
      */
-    public function getClickwraps()
+    public function getLabel()
     {
-        return $this->container['clickwraps'];
+        return $this->container['label'];
     }
 
     /**
-     * Sets clickwraps
+     * Sets label
      *
-     * @param \DocuSign\Click\Model\ClickwrapVersionSummaryResponse[] $clickwraps 
+     * @param ?string $label 
      *
      * @return $this
      */
-    public function setClickwraps($clickwraps)
+    public function setLabel($label)
     {
-        $this->container['clickwraps'] = $clickwraps;
+        $this->container['label'] = $label;
 
         return $this;
     }
 
     /**
-     * Gets minimum_pages_remaining
+     * Gets name
      *
-     * @return ?int
+     * @return ?string
      */
-    public function getMinimumPagesRemaining()
+    public function getName()
     {
-        return $this->container['minimum_pages_remaining'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets minimum_pages_remaining
+     * Sets name
      *
-     * @param ?int $minimum_pages_remaining 
+     * @param ?string $name 
      *
      * @return $this
      */
-    public function setMinimumPagesRemaining($minimum_pages_remaining)
+    public function setName($name)
     {
-        $this->container['minimum_pages_remaining'] = $minimum_pages_remaining;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets page
+     * Gets type
      *
-     * @return ?int
+     * @return ?string
      */
-    public function getPage()
+    public function getType()
     {
-        return $this->container['page'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets page
+     * Sets type
      *
-     * @param ?int $page 
+     * @param ?string $type 
      *
      * @return $this
      */
-    public function setPage($page)
+    public function setType($type)
     {
-        $this->container['page'] = $page;
-
-        return $this;
-    }
-
-    /**
-     * Gets page_size
-     *
-     * @return ?int
-     */
-    public function getPageSize()
-    {
-        return $this->container['page_size'];
-    }
-
-    /**
-     * Sets page_size
-     *
-     * @param ?int $page_size 
-     *
-     * @return $this
-     */
-    public function setPageSize($page_size)
-    {
-        $this->container['page_size'] = $page_size;
+        $this->container['type'] = $type;
 
         return $this;
     }

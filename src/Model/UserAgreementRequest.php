@@ -60,6 +60,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'client_user_id' => '?string',
+        'document_data' => 'map[string,?string]',
         'metadata' => '?string'
     ];
 
@@ -70,6 +71,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'client_user_id' => null,
+        'document_data' => null,
         'metadata' => null
     ];
 
@@ -101,6 +103,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'client_user_id' => 'clientUserId',
+        'document_data' => 'documentData',
         'metadata' => 'metadata'
     ];
 
@@ -111,6 +114,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'client_user_id' => 'setClientUserId',
+        'document_data' => 'setDocumentData',
         'metadata' => 'setMetadata'
     ];
 
@@ -121,6 +125,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'client_user_id' => 'getClientUserId',
+        'document_data' => 'getDocumentData',
         'metadata' => 'getMetadata'
     ];
 
@@ -185,6 +190,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['client_user_id'] = isset($data['client_user_id']) ? $data['client_user_id'] : null;
+        $this->container['document_data'] = isset($data['document_data']) ? $data['document_data'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
     }
 
@@ -237,6 +243,30 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets document_data
+     *
+     * @return map[string,?string]
+     */
+    public function getDocumentData()
+    {
+        return $this->container['document_data'];
+    }
+
+    /**
+     * Sets document_data
+     *
+     * @param map[string,?string] $document_data 
+     *
+     * @return $this
+     */
+    public function setDocumentData($document_data)
+    {
+        $this->container['document_data'] = $document_data;
+
+        return $this;
+    }
+
+    /**
      * Gets metadata
      *
      * @return ?string
@@ -266,6 +296,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -278,6 +309,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -291,6 +323,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -307,6 +340,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
