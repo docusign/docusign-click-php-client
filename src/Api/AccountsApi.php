@@ -1603,6 +1603,123 @@ class AccountsApi
     }
 
     /**
+     * Operation getAgreementDocument
+     *
+     * Downloads a document at an order within the agreement.
+     *
+     * @param ?string $account_id 
+     * @param ?string $clickwrap_id 
+     * @param ?string $order_or_disclosure 
+     * @param ?string $version_id 
+     *
+     * @throws ApiException on non-2xx response
+     * @return \DocuSign\Click\Model\Document
+     */
+    public function getAgreementDocument($account_id, $clickwrap_id, $order_or_disclosure, $version_id)
+    {
+        list($response) = $this->getAgreementDocumentWithHttpInfo($account_id, $clickwrap_id, $order_or_disclosure, $version_id);
+        return $response;
+    }
+
+    /**
+     * Operation getAgreementDocumentWithHttpInfo
+     *
+     * Downloads a document at an order within the agreement.
+     *
+     * @param ?string $account_id 
+     * @param ?string $clickwrap_id 
+     * @param ?string $order_or_disclosure 
+     * @param ?string $version_id 
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of \DocuSign\Click\Model\Document, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAgreementDocumentWithHttpInfo($account_id, $clickwrap_id, $order_or_disclosure, $version_id): array
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling getAgreementDocument');
+        }
+        // verify the required parameter 'clickwrap_id' is set
+        if ($clickwrap_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $clickwrap_id when calling getAgreementDocument');
+        }
+        // verify the required parameter 'order_or_disclosure' is set
+        if ($order_or_disclosure === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $order_or_disclosure when calling getAgreementDocument');
+        }
+        // verify the required parameter 'version_id' is set
+        if ($version_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $version_id when calling getAgreementDocument');
+        }
+        // parse inputs
+        $resourcePath = "/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionId}/documents/{orderOrDisclosure}";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
+        }
+        // path params
+        if ($clickwrap_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "clickwrapId", $clickwrap_id);
+        }
+        // path params
+        if ($order_or_disclosure !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "orderOrDisclosure", $order_or_disclosure);
+        }
+        // path params
+        if ($version_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "versionId", $version_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\DocuSign\Click\Model\Document',
+                '/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionId}/documents/{orderOrDisclosure}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\Click\Model\Document', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Click\Model\Document', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Click\Model\ErrorDetails', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation getAgreementPdf
      *
      * Downloads the agreement PDF and optionally certificate of completion.

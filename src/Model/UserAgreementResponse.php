@@ -65,13 +65,16 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'agreement_url' => '?string',
         'clickwrap_id' => '?string',
         'client_user_id' => '?string',
+        'consumer_disclosure_enabled' => '?bool',
         'consumer_disclosure_html' => '?string',
         'created_on' => 'object',
         'declined_on' => 'object',
+        'document_data' => 'map[string,?string]',
         'documents' => '\DocuSign\Click\Model\Document[]',
         'metadata' => '?string',
         'settings' => '\DocuSign\Click\Model\DisplaySettings',
         'status' => '?string',
+        'style' => 'map[string,?string]',
         'version' => '?string',
         'version_id' => '?string',
         'version_number' => '?int'
@@ -89,13 +92,16 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'agreement_url' => null,
         'clickwrap_id' => null,
         'client_user_id' => null,
+        'consumer_disclosure_enabled' => null,
         'consumer_disclosure_html' => null,
         'created_on' => null,
         'declined_on' => null,
+        'document_data' => null,
         'documents' => null,
         'metadata' => null,
         'settings' => null,
         'status' => null,
+        'style' => null,
         'version' => null,
         'version_id' => null,
         'version_number' => 'int32'
@@ -134,13 +140,16 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'agreement_url' => 'agreementUrl',
         'clickwrap_id' => 'clickwrapId',
         'client_user_id' => 'clientUserId',
+        'consumer_disclosure_enabled' => 'consumerDisclosureEnabled',
         'consumer_disclosure_html' => 'consumerDisclosureHtml',
         'created_on' => 'createdOn',
         'declined_on' => 'declinedOn',
+        'document_data' => 'documentData',
         'documents' => 'documents',
         'metadata' => 'metadata',
         'settings' => 'settings',
         'status' => 'status',
+        'style' => 'style',
         'version' => 'version',
         'version_id' => 'versionId',
         'version_number' => 'versionNumber'
@@ -158,13 +167,16 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'agreement_url' => 'setAgreementUrl',
         'clickwrap_id' => 'setClickwrapId',
         'client_user_id' => 'setClientUserId',
+        'consumer_disclosure_enabled' => 'setConsumerDisclosureEnabled',
         'consumer_disclosure_html' => 'setConsumerDisclosureHtml',
         'created_on' => 'setCreatedOn',
         'declined_on' => 'setDeclinedOn',
+        'document_data' => 'setDocumentData',
         'documents' => 'setDocuments',
         'metadata' => 'setMetadata',
         'settings' => 'setSettings',
         'status' => 'setStatus',
+        'style' => 'setStyle',
         'version' => 'setVersion',
         'version_id' => 'setVersionId',
         'version_number' => 'setVersionNumber'
@@ -182,13 +194,16 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'agreement_url' => 'getAgreementUrl',
         'clickwrap_id' => 'getClickwrapId',
         'client_user_id' => 'getClientUserId',
+        'consumer_disclosure_enabled' => 'getConsumerDisclosureEnabled',
         'consumer_disclosure_html' => 'getConsumerDisclosureHtml',
         'created_on' => 'getCreatedOn',
         'declined_on' => 'getDeclinedOn',
+        'document_data' => 'getDocumentData',
         'documents' => 'getDocuments',
         'metadata' => 'getMetadata',
         'settings' => 'getSettings',
         'status' => 'getStatus',
+        'style' => 'getStyle',
         'version' => 'getVersion',
         'version_id' => 'getVersionId',
         'version_number' => 'getVersionNumber'
@@ -260,13 +275,16 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         $this->container['agreement_url'] = isset($data['agreement_url']) ? $data['agreement_url'] : null;
         $this->container['clickwrap_id'] = isset($data['clickwrap_id']) ? $data['clickwrap_id'] : null;
         $this->container['client_user_id'] = isset($data['client_user_id']) ? $data['client_user_id'] : null;
+        $this->container['consumer_disclosure_enabled'] = isset($data['consumer_disclosure_enabled']) ? $data['consumer_disclosure_enabled'] : null;
         $this->container['consumer_disclosure_html'] = isset($data['consumer_disclosure_html']) ? $data['consumer_disclosure_html'] : null;
         $this->container['created_on'] = isset($data['created_on']) ? $data['created_on'] : null;
         $this->container['declined_on'] = isset($data['declined_on']) ? $data['declined_on'] : null;
+        $this->container['document_data'] = isset($data['document_data']) ? $data['document_data'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['settings'] = isset($data['settings']) ? $data['settings'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
         $this->container['version'] = isset($data['version']) ? $data['version'] : null;
         $this->container['version_id'] = isset($data['version_id']) ? $data['version_id'] : null;
         $this->container['version_number'] = isset($data['version_number']) ? $data['version_number'] : null;
@@ -441,6 +459,30 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets consumer_disclosure_enabled
+     *
+     * @return ?bool
+     */
+    public function getConsumerDisclosureEnabled()
+    {
+        return $this->container['consumer_disclosure_enabled'];
+    }
+
+    /**
+     * Sets consumer_disclosure_enabled
+     *
+     * @param ?bool $consumer_disclosure_enabled 
+     *
+     * @return $this
+     */
+    public function setConsumerDisclosureEnabled($consumer_disclosure_enabled)
+    {
+        $this->container['consumer_disclosure_enabled'] = $consumer_disclosure_enabled;
+
+        return $this;
+    }
+
+    /**
      * Gets consumer_disclosure_html
      *
      * @return ?string
@@ -508,6 +550,30 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     public function setDeclinedOn($declined_on)
     {
         $this->container['declined_on'] = $declined_on;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_data
+     *
+     * @return map[string,?string]
+     */
+    public function getDocumentData()
+    {
+        return $this->container['document_data'];
+    }
+
+    /**
+     * Sets document_data
+     *
+     * @param map[string,?string] $document_data 
+     *
+     * @return $this
+     */
+    public function setDocumentData($document_data)
+    {
+        $this->container['document_data'] = $document_data;
 
         return $this;
     }
@@ -609,6 +675,30 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets style
+     *
+     * @return map[string,?string]
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param map[string,?string] $style 
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
      * Gets version
      *
      * @return ?string
@@ -686,6 +776,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -698,6 +789,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -711,6 +803,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -727,6 +820,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

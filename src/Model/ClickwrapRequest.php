@@ -60,6 +60,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'clickwrap_name' => '?string',
+        'data_fields' => '\DocuSign\Click\Model\DataField[]',
         'display_settings' => '\DocuSign\Click\Model\DisplaySettings',
         'documents' => '\DocuSign\Click\Model\Document[]',
         'fields_to_null' => '?string',
@@ -69,7 +70,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
         'require_reacceptance' => '?bool',
         'scheduled_date' => 'object',
         'scheduled_reacceptance' => '\DocuSign\Click\Model\ClickwrapScheduledReacceptance',
-        'status' => 'object',
+        'status' => '?string',
         'transfer_from_user_id' => '?string',
         'transfer_to_user_id' => '?string'
     ];
@@ -81,6 +82,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'clickwrap_name' => null,
+        'data_fields' => null,
         'display_settings' => null,
         'documents' => null,
         'fields_to_null' => null,
@@ -123,6 +125,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'clickwrap_name' => 'clickwrapName',
+        'data_fields' => 'dataFields',
         'display_settings' => 'displaySettings',
         'documents' => 'documents',
         'fields_to_null' => 'fieldsToNull',
@@ -144,6 +147,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'clickwrap_name' => 'setClickwrapName',
+        'data_fields' => 'setDataFields',
         'display_settings' => 'setDisplaySettings',
         'documents' => 'setDocuments',
         'fields_to_null' => 'setFieldsToNull',
@@ -165,6 +169,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'clickwrap_name' => 'getClickwrapName',
+        'data_fields' => 'getDataFields',
         'display_settings' => 'getDisplaySettings',
         'documents' => 'getDocuments',
         'fields_to_null' => 'getFieldsToNull',
@@ -240,6 +245,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['clickwrap_name'] = isset($data['clickwrap_name']) ? $data['clickwrap_name'] : null;
+        $this->container['data_fields'] = isset($data['data_fields']) ? $data['data_fields'] : null;
         $this->container['display_settings'] = isset($data['display_settings']) ? $data['display_settings'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
         $this->container['fields_to_null'] = isset($data['fields_to_null']) ? $data['fields_to_null'] : null;
@@ -298,6 +304,30 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     public function setClickwrapName($clickwrap_name)
     {
         $this->container['clickwrap_name'] = $clickwrap_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_fields
+     *
+     * @return \DocuSign\Click\Model\DataField[]
+     */
+    public function getDataFields()
+    {
+        return $this->container['data_fields'];
+    }
+
+    /**
+     * Sets data_fields
+     *
+     * @param \DocuSign\Click\Model\DataField[] $data_fields 
+     *
+     * @return $this
+     */
+    public function setDataFields($data_fields)
+    {
+        $this->container['data_fields'] = $data_fields;
 
         return $this;
     }
@@ -521,7 +551,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return object
+     * @return ?string
      */
     public function getStatus()
     {
@@ -531,7 +561,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param object $status 
+     * @param ?string $status 
      *
      * @return $this
      */
@@ -596,6 +626,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -608,6 +639,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -621,6 +653,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -637,6 +670,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

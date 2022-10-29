@@ -75,7 +75,8 @@ class DisplaySettings implements ModelInterface, ArrayAccess
         'must_view' => '?bool',
         'record_decline_responses' => '?bool',
         'require_accept' => '?bool',
-        'send_to_email' => '?bool'
+        'send_to_email' => '?bool',
+        'statement_alignment' => '?string'
     ];
 
     /**
@@ -100,7 +101,8 @@ class DisplaySettings implements ModelInterface, ArrayAccess
         'must_view' => null,
         'record_decline_responses' => null,
         'require_accept' => null,
-        'send_to_email' => null
+        'send_to_email' => null,
+        'statement_alignment' => null
     ];
 
     /**
@@ -146,7 +148,8 @@ class DisplaySettings implements ModelInterface, ArrayAccess
         'must_view' => 'mustView',
         'record_decline_responses' => 'recordDeclineResponses',
         'require_accept' => 'requireAccept',
-        'send_to_email' => 'sendToEmail'
+        'send_to_email' => 'sendToEmail',
+        'statement_alignment' => 'statementAlignment'
     ];
 
     /**
@@ -171,7 +174,8 @@ class DisplaySettings implements ModelInterface, ArrayAccess
         'must_view' => 'setMustView',
         'record_decline_responses' => 'setRecordDeclineResponses',
         'require_accept' => 'setRequireAccept',
-        'send_to_email' => 'setSendToEmail'
+        'send_to_email' => 'setSendToEmail',
+        'statement_alignment' => 'setStatementAlignment'
     ];
 
     /**
@@ -196,7 +200,8 @@ class DisplaySettings implements ModelInterface, ArrayAccess
         'must_view' => 'getMustView',
         'record_decline_responses' => 'getRecordDeclineResponses',
         'require_accept' => 'getRequireAccept',
-        'send_to_email' => 'getSendToEmail'
+        'send_to_email' => 'getSendToEmail',
+        'statement_alignment' => 'getStatementAlignment'
     ];
 
     /**
@@ -276,6 +281,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
         $this->container['record_decline_responses'] = isset($data['record_decline_responses']) ? $data['record_decline_responses'] : null;
         $this->container['require_accept'] = isset($data['require_accept']) ? $data['require_accept'] : null;
         $this->container['send_to_email'] = isset($data['send_to_email']) ? $data['send_to_email'] : null;
+        $this->container['statement_alignment'] = isset($data['statement_alignment']) ? $data['statement_alignment'] : null;
     }
 
     /**
@@ -709,6 +715,30 @@ class DisplaySettings implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets statement_alignment
+     *
+     * @return ?string
+     */
+    public function getStatementAlignment()
+    {
+        return $this->container['statement_alignment'];
+    }
+
+    /**
+     * Sets statement_alignment
+     *
+     * @param ?string $statement_alignment 
+     *
+     * @return $this
+     */
+    public function setStatementAlignment($statement_alignment)
+    {
+        $this->container['statement_alignment'] = $statement_alignment;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -716,6 +746,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -728,6 +759,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -741,6 +773,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -757,6 +790,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
