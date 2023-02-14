@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * ClickwrapTransferRequest Class Doc Comment
  *
  * @category    Class
+ * @description Data used to transfer a clickwrap from one user to another.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -225,7 +226,7 @@ class ClickwrapTransferRequest implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_from_user_id
      *
-     * @param ?string $transfer_from_user_id 
+     * @param ?string $transfer_from_user_id ID of the user to transfer from. This property is required.
      *
      * @return $this
      */
@@ -249,7 +250,7 @@ class ClickwrapTransferRequest implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_to_user_id
      *
-     * @param ?string $transfer_to_user_id 
+     * @param ?string $transfer_to_user_id ID of the user to transfer to. This property is required.
      *
      * @return $this
      */

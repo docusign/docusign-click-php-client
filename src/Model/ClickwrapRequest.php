@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * ClickwrapRequest Class Doc Comment
  *
  * @category    Class
+ * @description Request body for working with clickwrap.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -297,7 +298,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets clickwrap_name
      *
-     * @param ?string $clickwrap_name 
+     * @param ?string $clickwrap_name The name of the clickwrap. This field is required.
      *
      * @return $this
      */
@@ -321,7 +322,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets data_fields
      *
-     * @param \DocuSign\Click\Model\DataField[] $data_fields 
+     * @param \DocuSign\Click\Model\DataField[] $data_fields An array of data fields available to be inserted into the documents.
      *
      * @return $this
      */
@@ -345,7 +346,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets display_settings
      *
-     * @param \DocuSign\Click\Model\DisplaySettings $display_settings display_settings
+     * @param \DocuSign\Click\Model\DisplaySettings $display_settings Display settings for the clickwrap. This object is required.
      *
      * @return $this
      */
@@ -369,7 +370,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets documents
      *
-     * @param \DocuSign\Click\Model\Document[] $documents 
+     * @param \DocuSign\Click\Model\Document[] $documents An array of documents. This object is required.
      *
      * @return $this
      */
@@ -393,7 +394,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets fields_to_null
      *
-     * @param ?string $fields_to_null 
+     * @param ?string $fields_to_null Specifies whether `scheduledReacceptance` and `scheduledDate` should be cleared. May be one of:  - `\"scheduledReacceptance\"` - `\"scheduledDate\"` - `\"scheduledReacceptance,scheduledDate\"`
      *
      * @return $this
      */
@@ -417,7 +418,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets is_major_version
      *
-     * @param ?bool $is_major_version 
+     * @param ?bool $is_major_version Not used.
      *
      * @return $this
      */
@@ -441,7 +442,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets is_shared
      *
-     * @param ?bool $is_shared 
+     * @param ?bool $is_shared When **true,** indicates that the clickwrap is shared with one or more users in the account.
      *
      * @return $this
      */
@@ -465,7 +466,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param ?string $name 
+     * @param ?string $name Not used.
      *
      * @return $this
      */
@@ -489,7 +490,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets require_reacceptance
      *
-     * @param ?bool $require_reacceptance 
+     * @param ?bool $require_reacceptance When **true,** requires signers who have previously agreed to this clickwrap to sign again. The version number is incremented.
      *
      * @return $this
      */
@@ -513,7 +514,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets scheduled_date
      *
-     * @param object $scheduled_date 
+     * @param object $scheduled_date The time and date when this clickwrap is activated.
      *
      * @return $this
      */
@@ -537,7 +538,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets scheduled_reacceptance
      *
-     * @param \DocuSign\Click\Model\ClickwrapScheduledReacceptance $scheduled_reacceptance scheduled_reacceptance
+     * @param \DocuSign\Click\Model\ClickwrapScheduledReacceptance $scheduled_reacceptance Specifies the interval between reacceptances in days, weeks, months, or years.
      *
      * @return $this
      */
@@ -561,7 +562,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param ?string $status 
+     * @param ?string $status Clickwrap status. This property is read-only. Possible values:  - `active` - `inactive` - `deleted`
      *
      * @return $this
      */
@@ -585,7 +586,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_from_user_id
      *
-     * @param ?string $transfer_from_user_id 
+     * @param ?string $transfer_from_user_id Not used. To update the user ID of a clickwrap, use the [updateClickwrap](/docs/click-api/reference/accounts/clickwraps/updateclickwrap/) endpoint.
      *
      * @return $this
      */
@@ -609,7 +610,7 @@ class ClickwrapRequest implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_to_user_id
      *
-     * @param ?string $transfer_to_user_id 
+     * @param ?string $transfer_to_user_id Not used. To update the user ID of a clickwrap, use the [updateClickwrap](/docs/click-api/reference/accounts/clickwraps/updateclickwrap/) endpoint.
      *
      * @return $this
      */

@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * ErrorDetails Class Doc Comment
  *
  * @category    Class
+ * @description Error details.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -225,7 +226,7 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     /**
      * Sets error_code
      *
-     * @param ?string $error_code 
+     * @param ?string $error_code The error code.
      *
      * @return $this
      */
@@ -249,7 +250,7 @@ class ErrorDetails implements ModelInterface, ArrayAccess
     /**
      * Sets message
      *
-     * @param ?string $message 
+     * @param ?string $message The error message.
      *
      * @return $this
      */

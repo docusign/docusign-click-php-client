@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * ClickwrapVersionsPagedResponse Class Doc Comment
  *
  * @category    Class
+ * @description The results are paginated. Use the following properties to navigate the pages.  - &#x60;page&#x60;: The page number of the current results. - &#x60;pageSize&#x60;: The number of results in the current page. - &#x60;minimumPagesRemaining&#x60;: The number of pages that follow this one.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -255,7 +256,7 @@ class ClickwrapVersionsPagedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets account_id
      *
-     * @param ?string $account_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
      *
      * @return $this
      */
@@ -279,7 +280,7 @@ class ClickwrapVersionsPagedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets clickwrap_id
      *
-     * @param ?string $clickwrap_id 
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @return $this
      */
@@ -303,7 +304,7 @@ class ClickwrapVersionsPagedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets clickwrap_name
      *
-     * @param ?string $clickwrap_name 
+     * @param ?string $clickwrap_name The name of the clickwrap.
      *
      * @return $this
      */
@@ -327,7 +328,7 @@ class ClickwrapVersionsPagedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets minimum_pages_remaining
      *
-     * @param ?int $minimum_pages_remaining 
+     * @param ?int $minimum_pages_remaining An array of clickwrap versions.
      *
      * @return $this
      */
@@ -351,7 +352,7 @@ class ClickwrapVersionsPagedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets page
      *
-     * @param ?int $page 
+     * @param ?int $page The number of the current page.
      *
      * @return $this
      */
@@ -375,7 +376,7 @@ class ClickwrapVersionsPagedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets page_size
      *
-     * @param ?int $page_size 
+     * @param ?int $page_size The number of items per page.
      *
      * @return $this
      */
@@ -399,7 +400,7 @@ class ClickwrapVersionsPagedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets versions
      *
-     * @param \DocuSign\Click\Model\ClickwrapVersion[] $versions 
+     * @param \DocuSign\Click\Model\ClickwrapVersion[] $versions An array of clickwrap versions.
      *
      * @return $this
      */

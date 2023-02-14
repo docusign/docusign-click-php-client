@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * UserAgreementRequest Class Doc Comment
  *
  * @category    Class
+ * @description Data used to create the agreement.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -61,7 +62,8 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'client_user_id' => '?string',
         'document_data' => 'map[string,?string]',
-        'metadata' => '?string'
+        'metadata' => '?string',
+        'return_url' => '?string'
     ];
 
     /**
@@ -72,7 +74,8 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'client_user_id' => null,
         'document_data' => null,
-        'metadata' => null
+        'metadata' => null,
+        'return_url' => null
     ];
 
     /**
@@ -104,7 +107,8 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'client_user_id' => 'clientUserId',
         'document_data' => 'documentData',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'return_url' => 'returnUrl'
     ];
 
     /**
@@ -115,7 +119,8 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'client_user_id' => 'setClientUserId',
         'document_data' => 'setDocumentData',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'return_url' => 'setReturnUrl'
     ];
 
     /**
@@ -126,7 +131,8 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'client_user_id' => 'getClientUserId',
         'document_data' => 'getDocumentData',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'return_url' => 'getReturnUrl'
     ];
 
     /**
@@ -192,6 +198,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
         $this->container['client_user_id'] = isset($data['client_user_id']) ? $data['client_user_id'] : null;
         $this->container['document_data'] = isset($data['document_data']) ? $data['document_data'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['return_url'] = isset($data['return_url']) ? $data['return_url'] : null;
     }
 
     /**
@@ -231,7 +238,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     /**
      * Sets client_user_id
      *
-     * @param ?string $client_user_id 
+     * @param ?string $client_user_id A unique value that identifies a user. You can use anything that your system uses to identify unique users, such as employee IDs, email addresses, and surrogate keys as the value of `clientUserId`.  A clickwrap with a specific `clientUserId` will not appear again once it has been accepted.
      *
      * @return $this
      */
@@ -255,7 +262,7 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     /**
      * Sets document_data
      *
-     * @param map[string,?string] $document_data 
+     * @param map[string,?string] $document_data This property specifies the data used to create a clickwrap with [dynamic content][].    [dynamic content]: /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content
      *
      * @return $this
      */
@@ -279,13 +286,37 @@ class UserAgreementRequest implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param ?string $metadata 
+     * @param ?string $metadata A customer-defined string you can use in requests. This string will appear in the corresponding response.
      *
      * @return $this
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_url
+     *
+     * @return ?string
+     */
+    public function getReturnUrl()
+    {
+        return $this->container['return_url'];
+    }
+
+    /**
+     * Sets return_url
+     *
+     * @param ?string $return_url The URL to redirect to after the agreement is complete when the agreement is not rendered in an iframe.
+     *
+     * @return $this
+     */
+    public function setReturnUrl($return_url)
+    {
+        $this->container['return_url'] = $return_url;
 
         return $this;
     }
