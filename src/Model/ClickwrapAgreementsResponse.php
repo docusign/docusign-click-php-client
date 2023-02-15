@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -243,7 +243,7 @@ class ClickwrapAgreementsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets begin_created_on
      *
-     * @param object $begin_created_on 
+     * @param object $begin_created_on User agreements from this datetime.
      *
      * @return $this
      */
@@ -267,7 +267,7 @@ class ClickwrapAgreementsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets minimum_pages_remaining
      *
-     * @param ?int $minimum_pages_remaining 
+     * @param ?int $minimum_pages_remaining Number of pages remaining in the response.
      *
      * @return $this
      */
@@ -291,7 +291,7 @@ class ClickwrapAgreementsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets page
      *
-     * @param ?int $page 
+     * @param ?int $page The number of the current page.
      *
      * @return $this
      */
@@ -315,7 +315,7 @@ class ClickwrapAgreementsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets page_size
      *
-     * @param ?int $page_size 
+     * @param ?int $page_size The number of items per page.
      *
      * @return $this
      */
@@ -339,7 +339,7 @@ class ClickwrapAgreementsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets user_agreements
      *
-     * @param \DocuSign\Click\Model\UserAgreementResponse[] $user_agreements 
+     * @param \DocuSign\Click\Model\UserAgreementResponse[] $user_agreements An array of user agreements.
      *
      * @return $this
      */

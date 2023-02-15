@@ -1,6 +1,6 @@
 <?php
 /**
- * DataField
+ * BulkClickwrapRequest
  *
  * PHP version 7.4
  *
@@ -34,15 +34,16 @@ use \ArrayAccess;
 use DocuSign\Click\ObjectSerializer;
 
 /**
- * DataField Class Doc Comment
+ * BulkClickwrapRequest Class Doc Comment
  *
  * @category    Class
+ * @description Data used to start a bulk agreements export.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DataField implements ModelInterface, ArrayAccess
+class BulkClickwrapRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class DataField implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'dataField';
+    protected static $swaggerModelName = 'bulkClickwrapRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +60,9 @@ class DataField implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'label' => '?string',
-        'name' => '?string',
-        'type' => '?string'
+        'from_date' => 'object',
+        'status' => '?string',
+        'to_date' => 'object'
     ];
 
     /**
@@ -70,9 +71,9 @@ class DataField implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'label' => null,
-        'name' => null,
-        'type' => null
+        'from_date' => null,
+        'status' => null,
+        'to_date' => null
     ];
 
     /**
@@ -102,9 +103,9 @@ class DataField implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'label' => 'label',
-        'name' => 'name',
-        'type' => 'type'
+        'from_date' => 'fromDate',
+        'status' => 'status',
+        'to_date' => 'toDate'
     ];
 
     /**
@@ -113,9 +114,9 @@ class DataField implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'label' => 'setLabel',
-        'name' => 'setName',
-        'type' => 'setType'
+        'from_date' => 'setFromDate',
+        'status' => 'setStatus',
+        'to_date' => 'setToDate'
     ];
 
     /**
@@ -124,9 +125,9 @@ class DataField implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'label' => 'getLabel',
-        'name' => 'getName',
-        'type' => 'getType'
+        'from_date' => 'getFromDate',
+        'status' => 'getStatus',
+        'to_date' => 'getToDate'
     ];
 
     /**
@@ -189,9 +190,9 @@ class DataField implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['from_date'] = isset($data['from_date']) ? $data['from_date'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['to_date'] = isset($data['to_date']) ? $data['to_date'] : null;
     }
 
     /**
@@ -219,73 +220,73 @@ class DataField implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets label
+     * Gets from_date
      *
-     * @return ?string
+     * @return object
      */
-    public function getLabel()
+    public function getFromDate()
     {
-        return $this->container['label'];
+        return $this->container['from_date'];
     }
 
     /**
-     * Sets label
+     * Sets from_date
      *
-     * @param ?string $label 
+     * @param object $from_date The earliest date to return agreements from.
      *
      * @return $this
      */
-    public function setLabel($label)
+    public function setFromDate($from_date)
     {
-        $this->container['label'] = $label;
+        $this->container['from_date'] = $from_date;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets status
      *
      * @return ?string
      */
-    public function getName()
+    public function getStatus()
     {
-        return $this->container['name'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets name
+     * Sets status
      *
-     * @param ?string $name 
+     * @param ?string $status User agreement status. One of:  - `agreed` - `declined`
      *
      * @return $this
      */
-    public function setName($name)
+    public function setStatus($status)
     {
-        $this->container['name'] = $name;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets to_date
      *
-     * @return ?string
+     * @return object
      */
-    public function getType()
+    public function getToDate()
     {
-        return $this->container['type'];
+        return $this->container['to_date'];
     }
 
     /**
-     * Sets type
+     * Sets to_date
      *
-     * @param ?string $type 
+     * @param object $to_date The latest date to return agreements from.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setToDate($to_date)
     {
-        $this->container['type'] = $type;
+        $this->container['to_date'] = $to_date;
 
         return $this;
     }

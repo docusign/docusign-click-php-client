@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * ClickwrapVersionsResponse Class Doc Comment
  *
  * @category    Class
+ * @description The results are paginated. Use the following properties to navigate the pages. Use the &#x60;page_number&#x60; query parameter to specify a page.  - &#x60;page&#x60;: The page number of the current results. - &#x60;pageSize&#x60;: The number of results in the current page. - &#x60;minimumPagesRemaining&#x60;: The number of pages that follow this one.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -237,7 +238,7 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets clickwraps
      *
-     * @param \DocuSign\Click\Model\ClickwrapVersionSummaryResponse[] $clickwraps 
+     * @param \DocuSign\Click\Model\ClickwrapVersionSummaryResponse[] $clickwraps An array of `clickwrapVersionSummaryResponse` objects.
      *
      * @return $this
      */
@@ -261,7 +262,7 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets minimum_pages_remaining
      *
-     * @param ?int $minimum_pages_remaining 
+     * @param ?int $minimum_pages_remaining Number of pages remaining in the response.
      *
      * @return $this
      */
@@ -285,7 +286,7 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets page
      *
-     * @param ?int $page 
+     * @param ?int $page The number of the current page.
      *
      * @return $this
      */
@@ -309,7 +310,7 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets page_size
      *
-     * @param ?int $page_size 
+     * @param ?int $page_size The number of items per page.
      *
      * @return $this
      */

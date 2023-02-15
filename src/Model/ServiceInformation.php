@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -249,7 +249,7 @@ class ServiceInformation implements ModelInterface, ArrayAccess
     /**
      * Sets build_branch
      *
-     * @param ?string $build_branch 
+     * @param ?string $build_branch The internal source control branch.
      *
      * @return $this
      */
@@ -273,7 +273,7 @@ class ServiceInformation implements ModelInterface, ArrayAccess
     /**
      * Sets build_branch_deployed_date_time
      *
-     * @param ?string $build_branch_deployed_date_time 
+     * @param ?string $build_branch_deployed_date_time The date-time this branch was deployed.
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class ServiceInformation implements ModelInterface, ArrayAccess
     /**
      * Sets build_sha
      *
-     * @param ?string $build_sha 
+     * @param ?string $build_sha The internal source control SHA.
      *
      * @return $this
      */
@@ -321,7 +321,7 @@ class ServiceInformation implements ModelInterface, ArrayAccess
     /**
      * Sets build_version
      *
-     * @param ?string $build_version 
+     * @param ?string $build_version The internal build version information.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class ServiceInformation implements ModelInterface, ArrayAccess
     /**
      * Sets linked_sites
      *
-     * @param ?string[] $linked_sites 
+     * @param ?string[] $linked_sites An array of URLs (strings) of related sites.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class ServiceInformation implements ModelInterface, ArrayAccess
     /**
      * Sets service_versions
      *
-     * @param \DocuSign\Click\Model\ServiceVersion[] $service_versions 
+     * @param \DocuSign\Click\Model\ServiceVersion[] $service_versions An array of `serviceVersion` objects.
      *
      * @return $this
      */

@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -68,10 +68,12 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_enabled' => '?bool',
         'consumer_disclosure_html' => '?string',
         'created_on' => 'object',
+        'data_fields' => '\DocuSign\Click\Model\DataField[]',
         'declined_on' => 'object',
         'document_data' => 'map[string,?string]',
         'documents' => '\DocuSign\Click\Model\Document[]',
         'metadata' => '?string',
+        'return_url' => '?string',
         'settings' => '\DocuSign\Click\Model\DisplaySettings',
         'status' => '?string',
         'style' => 'map[string,?string]',
@@ -95,10 +97,12 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_enabled' => null,
         'consumer_disclosure_html' => null,
         'created_on' => null,
+        'data_fields' => null,
         'declined_on' => null,
         'document_data' => null,
         'documents' => null,
         'metadata' => null,
+        'return_url' => null,
         'settings' => null,
         'status' => null,
         'style' => null,
@@ -143,10 +147,12 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_enabled' => 'consumerDisclosureEnabled',
         'consumer_disclosure_html' => 'consumerDisclosureHtml',
         'created_on' => 'createdOn',
+        'data_fields' => 'dataFields',
         'declined_on' => 'declinedOn',
         'document_data' => 'documentData',
         'documents' => 'documents',
         'metadata' => 'metadata',
+        'return_url' => 'returnUrl',
         'settings' => 'settings',
         'status' => 'status',
         'style' => 'style',
@@ -170,10 +176,12 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_enabled' => 'setConsumerDisclosureEnabled',
         'consumer_disclosure_html' => 'setConsumerDisclosureHtml',
         'created_on' => 'setCreatedOn',
+        'data_fields' => 'setDataFields',
         'declined_on' => 'setDeclinedOn',
         'document_data' => 'setDocumentData',
         'documents' => 'setDocuments',
         'metadata' => 'setMetadata',
+        'return_url' => 'setReturnUrl',
         'settings' => 'setSettings',
         'status' => 'setStatus',
         'style' => 'setStyle',
@@ -197,10 +205,12 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'consumer_disclosure_enabled' => 'getConsumerDisclosureEnabled',
         'consumer_disclosure_html' => 'getConsumerDisclosureHtml',
         'created_on' => 'getCreatedOn',
+        'data_fields' => 'getDataFields',
         'declined_on' => 'getDeclinedOn',
         'document_data' => 'getDocumentData',
         'documents' => 'getDocuments',
         'metadata' => 'getMetadata',
+        'return_url' => 'getReturnUrl',
         'settings' => 'getSettings',
         'status' => 'getStatus',
         'style' => 'getStyle',
@@ -278,10 +288,12 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         $this->container['consumer_disclosure_enabled'] = isset($data['consumer_disclosure_enabled']) ? $data['consumer_disclosure_enabled'] : null;
         $this->container['consumer_disclosure_html'] = isset($data['consumer_disclosure_html']) ? $data['consumer_disclosure_html'] : null;
         $this->container['created_on'] = isset($data['created_on']) ? $data['created_on'] : null;
+        $this->container['data_fields'] = isset($data['data_fields']) ? $data['data_fields'] : null;
         $this->container['declined_on'] = isset($data['declined_on']) ? $data['declined_on'] : null;
         $this->container['document_data'] = isset($data['document_data']) ? $data['document_data'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['return_url'] = isset($data['return_url']) ? $data['return_url'] : null;
         $this->container['settings'] = isset($data['settings']) ? $data['settings'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['style'] = isset($data['style']) ? $data['style'] : null;
@@ -327,7 +339,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets account_id
      *
-     * @param ?string $account_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
      *
      * @return $this
      */
@@ -351,7 +363,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets agreed_on
      *
-     * @param object $agreed_on 
+     * @param object $agreed_on Date that the client last completed the agreement.  This property is null if `agreementUrl` is not null and `status` is not  `agreed`.
      *
      * @return $this
      */
@@ -375,7 +387,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets agreement_id
      *
-     * @param ?string $agreement_id 
+     * @param ?string $agreement_id The agreement ID.
      *
      * @return $this
      */
@@ -399,7 +411,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets agreement_url
      *
-     * @param ?string $agreement_url 
+     * @param ?string $agreement_url When not null, an agreement is required for user specified by  `clientUserId`.  When missing the user specified by `clientUserId` has already agreed and does not require a new acceptance.  Use this URL to render the agreement in a web page.  <!-- or redirected to when providing redirect_url as a query parameter. -->
      *
      * @return $this
      */
@@ -423,7 +435,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets clickwrap_id
      *
-     * @param ?string $clickwrap_id 
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @return $this
      */
@@ -447,7 +459,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets client_user_id
      *
-     * @param ?string $client_user_id 
+     * @param ?string $client_user_id A unique value that identifies a user.\\nYou can use anything that your system uses\\nto identify unique users, such as\\nemployee IDs, email addresses, and surrogate keys as the value of `clientUserId`.\\n\\nA clickwrap with a specific `clientUserId` will not appear again\\nonce it has been accepted.\\n\"
      *
      * @return $this
      */
@@ -471,7 +483,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets consumer_disclosure_enabled
      *
-     * @param ?bool $consumer_disclosure_enabled 
+     * @param ?bool $consumer_disclosure_enabled **True** if consumer disclosure was required by this agreement.
      *
      * @return $this
      */
@@ -495,7 +507,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets consumer_disclosure_html
      *
-     * @param ?string $consumer_disclosure_html 
+     * @param ?string $consumer_disclosure_html The customer-branded HTML with the Electronic Record and Signature Disclosure information
      *
      * @return $this
      */
@@ -519,13 +531,37 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets created_on
      *
-     * @param object $created_on 
+     * @param object $created_on The date when the clickwrap was created. May be null.
      *
      * @return $this
      */
     public function setCreatedOn($created_on)
     {
         $this->container['created_on'] = $created_on;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_fields
+     *
+     * @return \DocuSign\Click\Model\DataField[]
+     */
+    public function getDataFields()
+    {
+        return $this->container['data_fields'];
+    }
+
+    /**
+     * Sets data_fields
+     *
+     * @param \DocuSign\Click\Model\DataField[] $data_fields The list of all the data fields available for the clickwrap (custom fields and standard fields).
+     *
+     * @return $this
+     */
+    public function setDataFields($data_fields)
+    {
+        $this->container['data_fields'] = $data_fields;
 
         return $this;
     }
@@ -543,7 +579,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets declined_on
      *
-     * @param object $declined_on 
+     * @param object $declined_on The date when the user declined the most recent required agreement.  This property is valid only when `status` is `declined`. Otherwise it is null.
      *
      * @return $this
      */
@@ -567,7 +603,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets document_data
      *
-     * @param map[string,?string] $document_data 
+     * @param map[string,?string] $document_data This property specifies the data used to create a clickwrap with [dynamic content][].    [dynamic content]: /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content
      *
      * @return $this
      */
@@ -591,7 +627,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets documents
      *
-     * @param \DocuSign\Click\Model\Document[] $documents 
+     * @param \DocuSign\Click\Model\Document[] $documents An array of documents.
      *
      * @return $this
      */
@@ -615,13 +651,37 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param ?string $metadata 
+     * @param ?string $metadata A customer-defined string you can use in requests. This string will appear in the corresponding response.
      *
      * @return $this
      */
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_url
+     *
+     * @return ?string
+     */
+    public function getReturnUrl()
+    {
+        return $this->container['return_url'];
+    }
+
+    /**
+     * Sets return_url
+     *
+     * @param ?string $return_url The URL redirected to after the agreement was completed.
+     *
+     * @return $this
+     */
+    public function setReturnUrl($return_url)
+    {
+        $this->container['return_url'] = $return_url;
 
         return $this;
     }
@@ -639,7 +699,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets settings
      *
-     * @param \DocuSign\Click\Model\DisplaySettings $settings settings
+     * @param \DocuSign\Click\Model\DisplaySettings $settings The display settings for this agreement.
      *
      * @return $this
      */
@@ -663,7 +723,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param ?string $status 
+     * @param ?string $status User agreement status. One of:  - `created` - `agreed` - `declined`
      *
      * @return $this
      */
@@ -687,7 +747,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets style
      *
-     * @param map[string,?string] $style 
+     * @param map[string,?string] $style This property specifies the custom style provided when the agreement was created by [customizing the template appearance][].    [customizing the template appearance]: /docs/click-api/click101/customize-elastic-template-appearance/
      *
      * @return $this
      */
@@ -711,7 +771,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets version
      *
-     * @param ?string $version 
+     * @param ?string $version The human-readable semver version string.
      *
      * @return $this
      */
@@ -735,7 +795,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets version_id
      *
-     * @param ?string $version_id 
+     * @param ?string $version_id The ID of the version.
      *
      * @return $this
      */
@@ -759,7 +819,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets version_number
      *
-     * @param ?int $version_number 
+     * @param ?int $version_number Version of the clickwrap.
      *
      * @return $this
      */

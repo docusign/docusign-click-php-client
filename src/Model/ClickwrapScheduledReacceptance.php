@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -231,7 +231,7 @@ class ClickwrapScheduledReacceptance implements ModelInterface, ArrayAccess
     /**
      * Sets recurrence_interval
      *
-     * @param ?int $recurrence_interval 
+     * @param ?int $recurrence_interval The time between recurrences specified in `recurrenceIntervalType` units.  The minimum and maximum values depend on `recurrenceIntervalType`:  - `days`: 1 - 365 - `weeks`: 1 - 52 - `months`: 1 - 12 - `years`: 1
      *
      * @return $this
      */
@@ -255,7 +255,7 @@ class ClickwrapScheduledReacceptance implements ModelInterface, ArrayAccess
     /**
      * Sets recurrence_interval_type
      *
-     * @param ?string $recurrence_interval_type 
+     * @param ?string $recurrence_interval_type The units of the `recurrenceInterval`. Must be one of:  - `days` - `weeks` - `month` - `years`
      *
      * @return $this
      */
@@ -279,7 +279,7 @@ class ClickwrapScheduledReacceptance implements ModelInterface, ArrayAccess
     /**
      * Sets start_date_time
      *
-     * @param object $start_date_time 
+     * @param object $start_date_time The date when the recurrence interval starts.
      *
      * @return $this
      */

@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * ClickwrapDeleteResponse Class Doc Comment
  *
  * @category    Class
+ * @description The result of a clickwrap deletion request.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -243,7 +244,7 @@ class ClickwrapDeleteResponse implements ModelInterface, ArrayAccess
     /**
      * Sets clickwrap_id
      *
-     * @param ?string $clickwrap_id 
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @return $this
      */
@@ -267,7 +268,7 @@ class ClickwrapDeleteResponse implements ModelInterface, ArrayAccess
     /**
      * Sets clickwrap_name
      *
-     * @param ?string $clickwrap_name 
+     * @param ?string $clickwrap_name The name of the clickwrap.
      *
      * @return $this
      */
@@ -291,7 +292,7 @@ class ClickwrapDeleteResponse implements ModelInterface, ArrayAccess
     /**
      * Sets deletion_message
      *
-     * @param ?string $deletion_message 
+     * @param ?string $deletion_message A message describing the result of deletion request. One of:  - `alreadyDeleted`: Clickwrap is already deleted. - `deletionSuccess`: Successfully deleted the clickwrap. - `deletionFailure`: Failed to delete the clickwrap. - `cannotDelete`: Active clickwrap version cannot be deleted.
      *
      * @return $this
      */
@@ -315,7 +316,7 @@ class ClickwrapDeleteResponse implements ModelInterface, ArrayAccess
     /**
      * Sets deletion_success
      *
-     * @param ?bool $deletion_success 
+     * @param ?bool $deletion_success **True** if the clickwrap was deleted successfully. **False** otherwise.
      *
      * @return $this
      */
@@ -339,7 +340,7 @@ class ClickwrapDeleteResponse implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param ?string $status 
+     * @param ?string $status Clickwrap status. Possible values:  - `active` - `inactive` - `deleted`
      *
      * @return $this
      */

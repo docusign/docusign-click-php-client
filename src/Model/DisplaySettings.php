@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * DisplaySettings Class Doc Comment
  *
  * @category    Class
+ * @description Information about how an agreement is displayed.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -321,7 +322,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets action_button_alignment
      *
-     * @param ?string $action_button_alignment 
+     * @param ?string $action_button_alignment Position of the Accept button in the agreement. One of   - `right` - `left`
      *
      * @return $this
      */
@@ -345,7 +346,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets allow_client_only
      *
-     * @param ?bool $allow_client_only 
+     * @param ?bool $allow_client_only When **true,** this agreement can be be used in client-only integrations.
      *
      * @return $this
      */
@@ -369,7 +370,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets allowed_hosts
      *
-     * @param ?string[] $allowed_hosts 
+     * @param ?string[] $allowed_hosts Hosts that can host the clickwrap.  It is an error if the clickwrap didn't come from one of these hosts.
      *
      * @return $this
      */
@@ -393,7 +394,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets brand_id
      *
-     * @param ?string $brand_id 
+     * @param ?string $brand_id The signing brand ID.
      *
      * @return $this
      */
@@ -417,7 +418,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets consent_button_text
      *
-     * @param ?string $consent_button_text 
+     * @param ?string $consent_button_text Text on the agree button.
      *
      * @return $this
      */
@@ -441,7 +442,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets consent_text
      *
-     * @param ?string $consent_text 
+     * @param ?string $consent_text The statement prefixing the Electronic Record and Signature Disclosure agreement.
      *
      * @return $this
      */
@@ -465,7 +466,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets decline_button_text
      *
-     * @param ?string $decline_button_text 
+     * @param ?string $decline_button_text The text on the decline button.
      *
      * @return $this
      */
@@ -489,7 +490,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets display_name
      *
-     * @param ?string $display_name 
+     * @param ?string $display_name The display name of the user agreement.
      *
      * @return $this
      */
@@ -513,7 +514,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets document_display
      *
-     * @param ?string $document_display 
+     * @param ?string $document_display Display type: link, document or pdf
      *
      * @return $this
      */
@@ -537,7 +538,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets downloadable
      *
-     * @param ?bool $downloadable 
+     * @param ?bool $downloadable **True** if the agreement is downloadable.
      *
      * @return $this
      */
@@ -561,7 +562,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets format
      *
-     * @param ?string $format 
+     * @param ?string $format Display format: inline or modal.
      *
      * @return $this
      */
@@ -585,7 +586,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets has_decline_button
      *
-     * @param ?bool $has_decline_button 
+     * @param ?bool $has_decline_button **True** if the agreement has a decline button.
      *
      * @return $this
      */
@@ -609,7 +610,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets must_read
      *
-     * @param ?bool $must_read 
+     * @param ?bool $must_read **True** if the user needs to scroll to the end of the document.
      *
      * @return $this
      */
@@ -633,7 +634,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets must_view
      *
-     * @param ?bool $must_view 
+     * @param ?bool $must_view **True** if the user must view the document.
      *
      * @return $this
      */
@@ -657,7 +658,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets record_decline_responses
      *
-     * @param ?bool $record_decline_responses 
+     * @param ?bool $record_decline_responses When **true,** this agreement records decline actions.
      *
      * @return $this
      */
@@ -681,7 +682,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets require_accept
      *
-     * @param ?bool $require_accept 
+     * @param ?bool $require_accept **True** if a checkbox is required to accept.
      *
      * @return $this
      */
@@ -705,7 +706,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets send_to_email
      *
-     * @param ?bool $send_to_email 
+     * @param ?bool $send_to_email **True** if send to email is applicable.
      *
      * @return $this
      */
@@ -729,7 +730,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
     /**
      * Sets statement_alignment
      *
-     * @param ?string $statement_alignment 
+     * @param ?string $statement_alignment Position of the agreement statement. One of   - `top` - `bottom`
      *
      * @return $this
      */

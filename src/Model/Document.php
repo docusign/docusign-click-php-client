@@ -14,7 +14,7 @@
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -37,6 +37,7 @@ use DocuSign\Click\ObjectSerializer;
  * Document Class Doc Comment
  *
  * @category    Class
+ * @description Information about a document.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
@@ -261,7 +262,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets document_base64
      *
-     * @param ?string $document_base64 
+     * @param ?string $document_base64 The base64-encoded contents of the document.
      *
      * @return $this
      */
@@ -285,7 +286,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets document_display
      *
-     * @param ?string $document_display 
+     * @param ?string $document_display Display type: link, document or pdf
      *
      * @return $this
      */
@@ -309,7 +310,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets document_html
      *
-     * @param ?string $document_html 
+     * @param ?string $document_html The HTML representation of the document.
      *
      * @return $this
      */
@@ -333,7 +334,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets document_name
      *
-     * @param ?string $document_name 
+     * @param ?string $document_name The name of the document.
      *
      * @return $this
      */
@@ -357,7 +358,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets file_extension
      *
-     * @param ?string $file_extension 
+     * @param ?string $file_extension The file extension of the document.
      *
      * @return $this
      */
@@ -381,7 +382,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets must_read
      *
-     * @param ?bool $must_read 
+     * @param ?bool $must_read **True** if the user needs to scroll to the end of the document.
      *
      * @return $this
      */
@@ -405,7 +406,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets must_view
      *
-     * @param ?bool $must_view 
+     * @param ?bool $must_view **True** if the user must view the document.
      *
      * @return $this
      */
@@ -429,7 +430,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets order
      *
-     * @param ?int $order 
+     * @param ?int $order The order of document layout.
      *
      * @return $this
      */

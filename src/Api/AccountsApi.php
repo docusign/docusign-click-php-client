@@ -16,7 +16,7 @@ declare(strict_types=1);
 /**
  * DocuSign Click API
  *
- * DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.
+ * Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.
  *
  * OpenAPI spec version: v1
  * Contact: devcenter@docusign.com
@@ -45,7 +45,7 @@ namespace DocuSign\Click\Api\AccountsApi;
 class DeleteClickwrapOptions
 {
     /**
-      * $versions 
+      * $versions A comma-separated list of versions to delete.
       * @var ?string
       */
     protected ?string $versions = null;
@@ -62,7 +62,7 @@ class DeleteClickwrapOptions
 
     /**
      * Sets versions
-     * @param ?string $versions 
+     * @param ?string $versions A comma-separated list of versions to delete.
      *
      * @return self
      */
@@ -86,7 +86,7 @@ class DeleteClickwrapOptions
 class DeleteClickwrapVersionsOptions
 {
     /**
-      * $clickwrap_version_ids 
+      * $clickwrap_version_ids A comma-separated list of clickwrap version IDs to delete.
       * @var ?string
       */
     protected ?string $clickwrap_version_ids = null;
@@ -103,7 +103,7 @@ class DeleteClickwrapVersionsOptions
 
     /**
      * Sets clickwrap_version_ids
-     * @param ?string $clickwrap_version_ids 
+     * @param ?string $clickwrap_version_ids A comma-separated list of clickwrap version IDs to delete.
      *
      * @return self
      */
@@ -127,7 +127,7 @@ class DeleteClickwrapVersionsOptions
 class DeleteClickwrapsOptions
 {
     /**
-      * $clickwrap_ids 
+      * $clickwrap_ids A comma-separated list of clickwrap IDs to delete.
       * @var ?string
       */
     protected ?string $clickwrap_ids = null;
@@ -144,7 +144,7 @@ class DeleteClickwrapsOptions
 
     /**
      * Sets clickwrap_ids
-     * @param ?string $clickwrap_ids 
+     * @param ?string $clickwrap_ids A comma-separated list of clickwrap IDs to delete.
      *
      * @return self
      */
@@ -168,7 +168,7 @@ class DeleteClickwrapsOptions
 class GetAgreementPdfOptions
 {
     /**
-      * $include_coc 
+      * $include_coc When **true,** the Certificate of Completion will be appended to the PDF. The default value is **false.**
       * @var ?string
       */
     protected ?string $include_coc = null;
@@ -185,7 +185,7 @@ class GetAgreementPdfOptions
 
     /**
      * Sets include_coc
-     * @param ?string $include_coc 
+     * @param ?string $include_coc When **true,** the Certificate of Completion will be appended to the PDF. The default value is **false.**
      *
      * @return self
      */
@@ -209,7 +209,7 @@ class GetAgreementPdfOptions
 class GetClickwrapAgreementsOptions
 {
     /**
-      * $client_user_id 
+      * $client_user_id The client user ID to filter to a single user's agreements.
       * @var ?string
       */
     protected ?string $client_user_id = null;
@@ -226,7 +226,7 @@ class GetClickwrapAgreementsOptions
 
     /**
      * Sets client_user_id
-     * @param ?string $client_user_id 
+     * @param ?string $client_user_id The client user ID to filter to a single user's agreements.
      *
      * @return self
      */
@@ -236,7 +236,7 @@ class GetClickwrapAgreementsOptions
         return $this;
     }
     /**
-      * $from_date 
+      * $from_date The earliest date to return agreements from.
       * @var ?string
       */
     protected ?string $from_date = null;
@@ -253,7 +253,7 @@ class GetClickwrapAgreementsOptions
 
     /**
      * Sets from_date
-     * @param ?string $from_date 
+     * @param ?string $from_date The earliest date to return agreements from.
      *
      * @return self
      */
@@ -263,7 +263,7 @@ class GetClickwrapAgreementsOptions
         return $this;
     }
     /**
-      * $page_number 
+      * $page_number The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0.
       * @var ?string
       */
     protected ?string $page_number = null;
@@ -280,7 +280,7 @@ class GetClickwrapAgreementsOptions
 
     /**
      * Sets page_number
-     * @param ?string $page_number 
+     * @param ?string $page_number The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0.
      *
      * @return self
      */
@@ -290,7 +290,7 @@ class GetClickwrapAgreementsOptions
         return $this;
     }
     /**
-      * $status 
+      * $status User agreement status. One of:  - `created` - `agreed` - `declined`
       * @var ?string
       */
     protected ?string $status = null;
@@ -307,7 +307,7 @@ class GetClickwrapAgreementsOptions
 
     /**
      * Sets status
-     * @param ?string $status 
+     * @param ?string $status User agreement status. One of:  - `created` - `agreed` - `declined`
      *
      * @return self
      */
@@ -317,7 +317,7 @@ class GetClickwrapAgreementsOptions
         return $this;
     }
     /**
-      * $to_date 
+      * $to_date The latest date to return agreements from.
       * @var ?string
       */
     protected ?string $to_date = null;
@@ -334,7 +334,7 @@ class GetClickwrapAgreementsOptions
 
     /**
      * Sets to_date
-     * @param ?string $to_date 
+     * @param ?string $to_date The latest date to return agreements from.
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class GetClickwrapAgreementsOptions
 class GetClickwrapVersionAgreementsOptions
 {
     /**
-      * $client_user_id 
+      * $client_user_id The client user ID to filter to a single user's agreements.
       * @var ?string
       */
     protected ?string $client_user_id = null;
@@ -375,7 +375,7 @@ class GetClickwrapVersionAgreementsOptions
 
     /**
      * Sets client_user_id
-     * @param ?string $client_user_id 
+     * @param ?string $client_user_id The client user ID to filter to a single user's agreements.
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class GetClickwrapVersionAgreementsOptions
         return $this;
     }
     /**
-      * $from_date 
+      * $from_date The earliest date to return agreements from.
       * @var ?string
       */
     protected ?string $from_date = null;
@@ -402,7 +402,7 @@ class GetClickwrapVersionAgreementsOptions
 
     /**
      * Sets from_date
-     * @param ?string $from_date 
+     * @param ?string $from_date The earliest date to return agreements from.
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class GetClickwrapVersionAgreementsOptions
         return $this;
     }
     /**
-      * $page_number 
+      * $page_number The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0.
       * @var ?string
       */
     protected ?string $page_number = null;
@@ -429,7 +429,7 @@ class GetClickwrapVersionAgreementsOptions
 
     /**
      * Sets page_number
-     * @param ?string $page_number 
+     * @param ?string $page_number The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0.
      *
      * @return self
      */
@@ -439,7 +439,7 @@ class GetClickwrapVersionAgreementsOptions
         return $this;
     }
     /**
-      * $status 
+      * $status User agreement status. One of:  - `created` - `agreed` - `declined`
       * @var ?string
       */
     protected ?string $status = null;
@@ -456,7 +456,7 @@ class GetClickwrapVersionAgreementsOptions
 
     /**
      * Sets status
-     * @param ?string $status 
+     * @param ?string $status User agreement status. One of:  - `created` - `agreed` - `declined`
      *
      * @return self
      */
@@ -466,7 +466,7 @@ class GetClickwrapVersionAgreementsOptions
         return $this;
     }
     /**
-      * $to_date 
+      * $to_date The latest date to return agreements from.
       * @var ?string
       */
     protected ?string $to_date = null;
@@ -483,7 +483,7 @@ class GetClickwrapVersionAgreementsOptions
 
     /**
      * Sets to_date
-     * @param ?string $to_date 
+     * @param ?string $to_date The latest date to return agreements from.
      *
      * @return self
      */
@@ -507,7 +507,7 @@ class GetClickwrapVersionAgreementsOptions
 class GetClickwrapsOptions
 {
     /**
-      * $filter 
+      * $filter Names of columns by which to filter and values to match on.
       * @var ?string
       */
     protected ?string $filter = null;
@@ -524,7 +524,7 @@ class GetClickwrapsOptions
 
     /**
      * Sets filter
-     * @param ?string $filter 
+     * @param ?string $filter Names of columns by which to filter and values to match on.
      *
      * @return self
      */
@@ -534,7 +534,7 @@ class GetClickwrapsOptions
         return $this;
     }
     /**
-      * $from_date 
+      * $from_date The earliest date to return clickwraps from.
       * @var ?string
       */
     protected ?string $from_date = null;
@@ -551,7 +551,7 @@ class GetClickwrapsOptions
 
     /**
      * Sets from_date
-     * @param ?string $from_date 
+     * @param ?string $from_date The earliest date to return clickwraps from.
      *
      * @return self
      */
@@ -561,7 +561,7 @@ class GetClickwrapsOptions
         return $this;
     }
     /**
-      * $name 
+      * $name The name of the clickwraps to return.
       * @var ?string
       */
     protected ?string $name = null;
@@ -578,7 +578,7 @@ class GetClickwrapsOptions
 
     /**
      * Sets name
-     * @param ?string $name 
+     * @param ?string $name The name of the clickwraps to return.
      *
      * @return self
      */
@@ -588,7 +588,7 @@ class GetClickwrapsOptions
         return $this;
     }
     /**
-      * $owner_user_id 
+      * $owner_user_id The user ID of the owner.
       * @var ?string
       */
     protected ?string $owner_user_id = null;
@@ -605,7 +605,7 @@ class GetClickwrapsOptions
 
     /**
      * Sets owner_user_id
-     * @param ?string $owner_user_id 
+     * @param ?string $owner_user_id The user ID of the owner.
      *
      * @return self
      */
@@ -615,7 +615,7 @@ class GetClickwrapsOptions
         return $this;
     }
     /**
-      * $page_number 
+      * $page_number The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0.
       * @var ?string
       */
     protected ?string $page_number = null;
@@ -632,7 +632,7 @@ class GetClickwrapsOptions
 
     /**
      * Sets page_number
-     * @param ?string $page_number 
+     * @param ?string $page_number The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0.
      *
      * @return self
      */
@@ -642,7 +642,7 @@ class GetClickwrapsOptions
         return $this;
     }
     /**
-      * $status 
+      * $status The status of the clickwraps to filter by. One of:  - `active` - `inactive`
       * @var ?string
       */
     protected ?string $status = null;
@@ -659,7 +659,7 @@ class GetClickwrapsOptions
 
     /**
      * Sets status
-     * @param ?string $status 
+     * @param ?string $status The status of the clickwraps to filter by. One of:  - `active` - `inactive`
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class GetClickwrapsOptions
         return $this;
     }
     /**
-      * $to_date 
+      * $to_date The latest date to return clickwraps from.
       * @var ?string
       */
     protected ?string $to_date = null;
@@ -686,7 +686,7 @@ class GetClickwrapsOptions
 
     /**
      * Sets to_date
-     * @param ?string $to_date 
+     * @param ?string $to_date The latest date to return clickwraps from.
      *
      * @return self
      */
@@ -779,12 +779,112 @@ class AccountsApi
 
 
     /**
+     * Operation createBulkClickwrapAgreements
+     *
+     * Starts an export of clickwrap agreements for a specified date range.
+     *
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\BulkClickwrapRequest $bulk_clickwrap_request Data used to start a bulk agreements export. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return mixed
+     */
+    public function createBulkClickwrapAgreements($account_id, $clickwrap_id, $bulk_clickwrap_request = null)
+    {
+        list($response) = $this->createBulkClickwrapAgreementsWithHttpInfo($account_id, $clickwrap_id, $bulk_clickwrap_request);
+        return $response;
+    }
+
+    /**
+     * Operation createBulkClickwrapAgreementsWithHttpInfo
+     *
+     * Starts an export of clickwrap agreements for a specified date range.
+     *
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\BulkClickwrapRequest $bulk_clickwrap_request Data used to start a bulk agreements export. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createBulkClickwrapAgreementsWithHttpInfo($account_id, $clickwrap_id, $bulk_clickwrap_request = null): array
+    {
+        // verify the required parameter 'account_id' is set
+        if ($account_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $account_id when calling createBulkClickwrapAgreements');
+        }
+        // verify the required parameter 'clickwrap_id' is set
+        if ($clickwrap_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $clickwrap_id when calling createBulkClickwrapAgreements');
+        }
+        // parse inputs
+        $resourcePath = "/v1/accounts/{accountId}/clickwraps/{clickwrapId}/bulk_agreements";
+        $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
+        $queryParams = $headerParams = $formParams = [];
+        $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+
+
+        // path params
+        if ($account_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
+        }
+        // path params
+        if ($clickwrap_id !== null) {
+            $resourcePath = self::updateResourcePath($resourcePath, "clickwrapId", $clickwrap_id);
+        }
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+        // body params
+        $_tempBody = null;
+        if (isset($bulk_clickwrap_request)) {
+            $_tempBody = $bulk_clickwrap_request;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/v1/accounts/{accountId}/clickwraps/{clickwrapId}/bulk_agreements'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocuSign\Click\Model\ErrorDetails', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation createClickwrap
      *
-     * Creates a Clickwrap for the specified accountId
+     * Creates a clickwrap for an account.
      *
-     * @param ?string $account_id 
-     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request Request body for working with clickwrap. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionSummaryResponse
@@ -798,10 +898,10 @@ class AccountsApi
     /**
      * Operation createClickwrapWithHttpInfo
      *
-     * Creates a Clickwrap for the specified accountId
+     * Creates a clickwrap for an account.
      *
-     * @param ?string $account_id 
-     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request Request body for working with clickwrap. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionSummaryResponse, HTTP status code, HTTP response headers (array of strings)
@@ -875,11 +975,11 @@ class AccountsApi
     /**
      * Operation createClickwrapVersion
      *
-     * Creates the clickwrap version
+     * Creates a new clickwrap version.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request Request body for working with clickwrap. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionSummaryResponse
@@ -893,11 +993,11 @@ class AccountsApi
     /**
      * Operation createClickwrapVersionWithHttpInfo
      *
-     * Creates the clickwrap version
+     * Creates a new clickwrap version.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request Request body for working with clickwrap. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionSummaryResponse, HTTP status code, HTTP response headers (array of strings)
@@ -979,11 +1079,11 @@ class AccountsApi
     /**
      * Operation createHasAgreed
      *
-     * Checks if a user has agreed to a clickwrap and returns a response with the agreement url. Returns HttpStatusCode.OK if user has no pending agreement.
+     * Creates a unique URL for the agreement that you can embed in your application.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param \DocuSign\Click\Model\UserAgreementRequest $user_agreement_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\UserAgreementRequest $user_agreement_request Data used to create the agreement. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\UserAgreementResponse
@@ -997,11 +1097,11 @@ class AccountsApi
     /**
      * Operation createHasAgreedWithHttpInfo
      *
-     * Checks if a user has agreed to a clickwrap and returns a response with the agreement url. Returns HttpStatusCode.OK if user has no pending agreement.
+     * Creates a unique URL for the agreement that you can embed in your application.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param \DocuSign\Click\Model\UserAgreementRequest $user_agreement_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\UserAgreementRequest $user_agreement_request Data used to create the agreement. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\UserAgreementResponse, HTTP status code, HTTP response headers (array of strings)
@@ -1083,10 +1183,10 @@ class AccountsApi
     /**
      * Operation deleteClickwrap
      *
-     * Deletes the clickwrap and all its version specified by clickwrapId. Active clickwrap will not get deleted
+     * Deletes a clickwrap and all of its versions.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\DeleteClickwrapOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1101,10 +1201,10 @@ class AccountsApi
     /**
      * Operation deleteClickwrapWithHttpInfo
      *
-     * Deletes the clickwrap and all its version specified by clickwrapId. Active clickwrap will not get deleted
+     * Deletes a clickwrap and all of its versions.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\DeleteClickwrapOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1189,11 +1289,11 @@ class AccountsApi
     /**
      * Operation deleteClickwrapVersion
      *
-     * Delete a Clickwrap version specified by versionId
+     * Deletes a clickwrap version by version ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionDeleteResponse
@@ -1207,11 +1307,11 @@ class AccountsApi
     /**
      * Operation deleteClickwrapVersionWithHttpInfo
      *
-     * Delete a Clickwrap version specified by versionId
+     * Deletes a clickwrap version by version ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionDeleteResponse, HTTP status code, HTTP response headers (array of strings)
@@ -1296,10 +1396,10 @@ class AccountsApi
     /**
      * Operation deleteClickwrapVersions
      *
-     * Deletes the versions specified by query parameter clickwrapVersionIds for a clickwrap, or all versions if no query parameter is specified. It will not delete if a version is active.
+     * Deletes the versions of a clickwrap.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\DeleteClickwrapVersionsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1314,10 +1414,10 @@ class AccountsApi
     /**
      * Operation deleteClickwrapVersionsWithHttpInfo
      *
-     * Deletes the versions specified by query parameter clickwrapVersionIds for a clickwrap, or all versions if no query parameter is specified. It will not delete if a version is active.
+     * Deletes the versions of a clickwrap.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\DeleteClickwrapVersionsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1402,9 +1502,9 @@ class AccountsApi
     /**
      * Operation deleteClickwraps
      *
-     * Deletes all the clickwraps for an account or the ones passed in query parameter clickwrapIds. It will not delete active clickwraps.
+     * Deletes clickwraps for an account.
      *
-     * @param ?string $account_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
      * @param  \DocuSign\Click\Api\AccountsApi\DeleteClickwrapsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1419,9 +1519,9 @@ class AccountsApi
     /**
      * Operation deleteClickwrapsWithHttpInfo
      *
-     * Deletes all the clickwraps for an account or the ones passed in query parameter clickwrapIds. It will not delete active clickwraps.
+     * Deletes clickwraps for an account.
      *
-     * @param ?string $account_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
      * @param  \DocuSign\Click\Api\AccountsApi\DeleteClickwrapsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1498,11 +1598,11 @@ class AccountsApi
     /**
      * Operation getAgreement
      *
-     * Gets the agreement by a provided agreement ID
+     * Gets a specific agreement for a specified clickwrap.
      *
-     * @param ?string $account_id 
-     * @param ?string $agreement_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $agreement_id The agreement ID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\UserAgreementResponse
@@ -1516,11 +1616,11 @@ class AccountsApi
     /**
      * Operation getAgreementWithHttpInfo
      *
-     * Gets the agreement by a provided agreement ID
+     * Gets a specific agreement for a specified clickwrap.
      *
-     * @param ?string $account_id 
-     * @param ?string $agreement_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $agreement_id The agreement ID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\UserAgreementResponse, HTTP status code, HTTP response headers (array of strings)
@@ -1607,10 +1707,10 @@ class AccountsApi
      *
      * Downloads a document at an order within the agreement.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $order_or_disclosure 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $order_or_disclosure The order of the document or consumer_disclosure.
+     * @param ?string $version_id The ID of the clickwrap version.
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\Document
@@ -1626,10 +1726,10 @@ class AccountsApi
      *
      * Downloads a document at an order within the agreement.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $order_or_disclosure 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $order_or_disclosure The order of the document or consumer_disclosure.
+     * @param ?string $version_id The ID of the clickwrap version.
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\Document, HTTP status code, HTTP response headers (array of strings)
@@ -1722,11 +1822,11 @@ class AccountsApi
     /**
      * Operation getAgreementPdf
      *
-     * Downloads the agreement PDF and optionally certificate of completion.
+     * Gets the completed user agreement PDF.
      *
-     * @param ?string $account_id 
-     * @param ?string $agreement_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $agreement_id The agreement ID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\GetAgreementPdfOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1741,11 +1841,11 @@ class AccountsApi
     /**
      * Operation getAgreementPdfWithHttpInfo
      *
-     * Downloads the agreement PDF and optionally certificate of completion.
+     * Gets the completed user agreement PDF.
      *
-     * @param ?string $account_id 
-     * @param ?string $agreement_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $agreement_id The agreement ID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\GetAgreementPdfOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1838,10 +1938,10 @@ class AccountsApi
     /**
      * Operation getClickwrap
      *
-     * Gets the clickwrap for an account specified by clickwrapId
+     * Gets a  single clickwrap object.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionResponse
@@ -1855,10 +1955,10 @@ class AccountsApi
     /**
      * Operation getClickwrapWithHttpInfo
      *
-     * Gets the clickwrap for an account specified by clickwrapId
+     * Gets a  single clickwrap object.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionResponse, HTTP status code, HTTP response headers (array of strings)
@@ -1935,10 +2035,10 @@ class AccountsApi
     /**
      * Operation getClickwrapAgreements
      *
-     * Gets the agreement responses for a clickwrap
+     * Get user agreements
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\GetClickwrapAgreementsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1953,10 +2053,10 @@ class AccountsApi
     /**
      * Operation getClickwrapAgreementsWithHttpInfo
      *
-     * Gets the agreement responses for a clickwrap
+     * Get user agreements
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      * @param  \DocuSign\Click\Api\AccountsApi\GetClickwrapAgreementsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -2053,11 +2153,11 @@ class AccountsApi
     /**
      * Operation getClickwrapVersion
      *
-     * Gets the Clickwrap version by clickwrapId and versionId for an account
+     * Gets a specific version of a clickwrap by version ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionResponse
@@ -2071,11 +2171,11 @@ class AccountsApi
     /**
      * Operation getClickwrapVersionWithHttpInfo
      *
-     * Gets the Clickwrap version by clickwrapId and versionId for an account
+     * Gets a specific version of a clickwrap by version ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionResponse, HTTP status code, HTTP response headers (array of strings)
@@ -2160,11 +2260,11 @@ class AccountsApi
     /**
      * Operation getClickwrapVersionAgreements
      *
-     * Gets the agreement responses for a clickwrap version
+     * Gets the agreement responses for a clickwrap version by version ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
      * @param  \DocuSign\Click\Api\AccountsApi\GetClickwrapVersionAgreementsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -2179,11 +2279,11 @@ class AccountsApi
     /**
      * Operation getClickwrapVersionAgreementsWithHttpInfo
      *
-     * Gets the agreement responses for a clickwrap version
+     * Gets the agreement responses for a clickwrap version by version ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
      * @param  \DocuSign\Click\Api\AccountsApi\GetClickwrapVersionAgreementsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -2288,10 +2388,10 @@ class AccountsApi
     /**
      * Operation getClickwrapVersions
      *
-     * Gets all the versions of a clickwrap for an account
+     * Gets all the versions of a clickwrap.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionsPagedResponse
@@ -2305,10 +2405,10 @@ class AccountsApi
     /**
      * Operation getClickwrapVersionsWithHttpInfo
      *
-     * Gets all the versions of a clickwrap for an account
+     * Gets all the versions of a clickwrap.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionsPagedResponse, HTTP status code, HTTP response headers (array of strings)
@@ -2385,9 +2485,9 @@ class AccountsApi
     /**
      * Operation getClickwraps
      *
-     * Gets the Clickwraps for an account
+     * Gets all the clickwraps for a user.
      *
-     * @param ?string $account_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
      * @param  \DocuSign\Click\Api\AccountsApi\GetClickwrapsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -2402,9 +2502,9 @@ class AccountsApi
     /**
      * Operation getClickwrapsWithHttpInfo
      *
-     * Gets the Clickwraps for an account
+     * Gets all the clickwraps for a user.
      *
-     * @param ?string $account_id 
+     * @param ?string $account_id The external account number (int) or account ID GUID.
      * @param  \DocuSign\Click\Api\AccountsApi\GetClickwrapsOptions  $options for modifying the behavior of the function. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -2499,7 +2599,7 @@ class AccountsApi
     /**
      * Operation getServiceInformation
      *
-     * Provides base service and version access information.
+     * Gets the current version and other information about the Click API.
      *
      *
      * @throws ApiException on non-2xx response
@@ -2514,7 +2614,7 @@ class AccountsApi
     /**
      * Operation getServiceInformationWithHttpInfo
      *
-     * Provides base service and version access information.
+     * Gets the current version and other information about the Click API.
      *
      *
      * @throws ApiException on non-2xx response
@@ -2576,11 +2676,11 @@ class AccountsApi
     /**
      * Operation updateClickwrap
      *
-     * Updates the clickwrap specified by clickwrapId
+     * Update a clickwrap by ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param \DocuSign\Click\Model\ClickwrapTransferRequest $clickwrap_transfer_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\ClickwrapTransferRequest $clickwrap_transfer_request Data used to transfer a clickwrap from one user to another. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionSummaryResponse
@@ -2594,11 +2694,11 @@ class AccountsApi
     /**
      * Operation updateClickwrapWithHttpInfo
      *
-     * Updates the clickwrap specified by clickwrapId
+     * Update a clickwrap by ID.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param \DocuSign\Click\Model\ClickwrapTransferRequest $clickwrap_transfer_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param \DocuSign\Click\Model\ClickwrapTransferRequest $clickwrap_transfer_request Data used to transfer a clickwrap from one user to another. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionSummaryResponse, HTTP status code, HTTP response headers (array of strings)
@@ -2680,12 +2780,12 @@ class AccountsApi
     /**
      * Operation updateClickwrapVersion
      *
-     * Updates the clickwrap version specified by versionId
+     * Updates clickwrap version status and ownership.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
-     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
+     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request Request body for working with clickwrap. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionSummaryResponse
@@ -2699,12 +2799,12 @@ class AccountsApi
     /**
      * Operation updateClickwrapVersionWithHttpInfo
      *
-     * Updates the clickwrap version specified by versionId
+     * Updates clickwrap version status and ownership.
      *
-     * @param ?string $account_id 
-     * @param ?string $clickwrap_id 
-     * @param ?string $version_id 
-     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request  (optional)
+     * @param ?string $account_id The external account number (int) or account ID GUID.
+     * @param ?string $clickwrap_id The ID of the clickwrap.
+     * @param ?string $version_id The ID of the clickwrap version.
+     * @param \DocuSign\Click\Model\ClickwrapRequest $clickwrap_request Request body for working with clickwrap. (optional)
      *
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionSummaryResponse, HTTP status code, HTTP response headers (array of strings)
