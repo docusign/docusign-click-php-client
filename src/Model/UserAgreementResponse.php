@@ -76,7 +76,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'return_url' => '?string',
         'settings' => '\DocuSign\Click\Model\DisplaySettings',
         'status' => '?string',
-        'style' => 'map[string,?string]',
+        'style' => '\DocuSign\Click\Model\UserAgreementResponseStyle',
         'version' => '?string',
         'version_id' => '?string',
         'version_number' => '?int'
@@ -737,7 +737,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Gets style
      *
-     * @return map[string,?string]
+     * @return \DocuSign\Click\Model\UserAgreementResponseStyle
      */
     public function getStyle()
     {
@@ -747,7 +747,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets style
      *
-     * @param map[string,?string] $style This property specifies the custom style provided when the agreement was created by [customizing the template appearance][].    [customizing the template appearance]: /docs/click-api/click101/customize-elastic-template-appearance/
+     * @param \DocuSign\Click\Model\UserAgreementResponseStyle $style style
      *
      * @return $this
      */
