@@ -1,6 +1,11 @@
 # DocuSign Click PHP Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v1.4.1-rc1] - Click API v1-22.4.02.00 - 2024-03-20
+### Changed
+- Adjusted the minimum required `firebase/php-jwt` package version to 6.0.
+- Minimum required PHP version is now PHP 7.4
+
 ## [v1.4.0] - Click API v1-22.4.02.00 - 2023-06-27
 ### Changed
 - Added support for version v1-22.4.02.00 of the DocuSign Click API.
