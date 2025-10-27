@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -39,7 +39,7 @@ namespace DocuSign\Click\Api\AccountsApi;
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class DeleteClickwrapOptions
@@ -80,7 +80,7 @@ class DeleteClickwrapOptions
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class DeleteClickwrapVersionsOptions
@@ -121,7 +121,7 @@ class DeleteClickwrapVersionsOptions
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class DeleteClickwrapsOptions
@@ -162,7 +162,7 @@ class DeleteClickwrapsOptions
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetAgreementPdfOptions
@@ -203,7 +203,7 @@ class GetAgreementPdfOptions
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetClickwrapAgreementsOptions
@@ -352,7 +352,7 @@ class GetClickwrapAgreementsOptions
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetClickwrapVersionAgreementsOptions
@@ -501,7 +501,7 @@ class GetClickwrapVersionAgreementsOptions
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetClickwrapsOptions
@@ -712,7 +712,7 @@ use DocuSign\Click\ObjectSerializer;
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class AccountsApi
@@ -731,7 +731,7 @@ class AccountsApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -1192,7 +1192,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionsDeleteResponse
      */
-    public function deleteClickwrap($account_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\DeleteClickwrapOptions $options = null)
+    public function deleteClickwrap($account_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\DeleteClickwrapOptions $options = null)
     {
         list($response) = $this->deleteClickwrapWithHttpInfo($account_id, $clickwrap_id, $options);
         return $response;
@@ -1210,7 +1210,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionsDeleteResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteClickwrapWithHttpInfo($account_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\DeleteClickwrapOptions $options = null): array
+    public function deleteClickwrapWithHttpInfo($account_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\DeleteClickwrapOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
@@ -1405,7 +1405,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionsDeleteResponse
      */
-    public function deleteClickwrapVersions($account_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\DeleteClickwrapVersionsOptions $options = null)
+    public function deleteClickwrapVersions($account_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\DeleteClickwrapVersionsOptions $options = null)
     {
         list($response) = $this->deleteClickwrapVersionsWithHttpInfo($account_id, $clickwrap_id, $options);
         return $response;
@@ -1423,7 +1423,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionsDeleteResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteClickwrapVersionsWithHttpInfo($account_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\DeleteClickwrapVersionsOptions $options = null): array
+    public function deleteClickwrapVersionsWithHttpInfo($account_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\DeleteClickwrapVersionsOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
@@ -1510,7 +1510,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapsDeleteResponse
      */
-    public function deleteClickwraps($account_id, \DocuSign\Click\Api\AccountsApi\DeleteClickwrapsOptions $options = null)
+    public function deleteClickwraps($account_id, ?\DocuSign\Click\Api\AccountsApi\DeleteClickwrapsOptions $options = null)
     {
         list($response) = $this->deleteClickwrapsWithHttpInfo($account_id, $options);
         return $response;
@@ -1527,7 +1527,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapsDeleteResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteClickwrapsWithHttpInfo($account_id, \DocuSign\Click\Api\AccountsApi\DeleteClickwrapsOptions $options = null): array
+    public function deleteClickwrapsWithHttpInfo($account_id, ?\DocuSign\Click\Api\AccountsApi\DeleteClickwrapsOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
@@ -1832,7 +1832,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function getAgreementPdf($account_id, $agreement_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\GetAgreementPdfOptions $options = null)
+    public function getAgreementPdf($account_id, $agreement_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\GetAgreementPdfOptions $options = null)
     {
         list($response) = $this->getAgreementPdfWithHttpInfo($account_id, $agreement_id, $clickwrap_id, $options);
         return $response;
@@ -1851,7 +1851,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAgreementPdfWithHttpInfo($account_id, $agreement_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\GetAgreementPdfOptions $options = null): array
+    public function getAgreementPdfWithHttpInfo($account_id, $agreement_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\GetAgreementPdfOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
@@ -2044,7 +2044,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapAgreementsResponse
      */
-    public function getClickwrapAgreements($account_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\GetClickwrapAgreementsOptions $options = null)
+    public function getClickwrapAgreements($account_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\GetClickwrapAgreementsOptions $options = null)
     {
         list($response) = $this->getClickwrapAgreementsWithHttpInfo($account_id, $clickwrap_id, $options);
         return $response;
@@ -2062,7 +2062,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapAgreementsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getClickwrapAgreementsWithHttpInfo($account_id, $clickwrap_id, \DocuSign\Click\Api\AccountsApi\GetClickwrapAgreementsOptions $options = null): array
+    public function getClickwrapAgreementsWithHttpInfo($account_id, $clickwrap_id, ?\DocuSign\Click\Api\AccountsApi\GetClickwrapAgreementsOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
@@ -2270,7 +2270,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapAgreementsResponse
      */
-    public function getClickwrapVersionAgreements($account_id, $clickwrap_id, $version_id, \DocuSign\Click\Api\AccountsApi\GetClickwrapVersionAgreementsOptions $options = null)
+    public function getClickwrapVersionAgreements($account_id, $clickwrap_id, $version_id, ?\DocuSign\Click\Api\AccountsApi\GetClickwrapVersionAgreementsOptions $options = null)
     {
         list($response) = $this->getClickwrapVersionAgreementsWithHttpInfo($account_id, $clickwrap_id, $version_id, $options);
         return $response;
@@ -2289,7 +2289,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapAgreementsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getClickwrapVersionAgreementsWithHttpInfo($account_id, $clickwrap_id, $version_id, \DocuSign\Click\Api\AccountsApi\GetClickwrapVersionAgreementsOptions $options = null): array
+    public function getClickwrapVersionAgreementsWithHttpInfo($account_id, $clickwrap_id, $version_id, ?\DocuSign\Click\Api\AccountsApi\GetClickwrapVersionAgreementsOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
@@ -2493,7 +2493,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\Click\Model\ClickwrapVersionsResponse
      */
-    public function getClickwraps($account_id, \DocuSign\Click\Api\AccountsApi\GetClickwrapsOptions $options = null)
+    public function getClickwraps($account_id, ?\DocuSign\Click\Api\AccountsApi\GetClickwrapsOptions $options = null)
     {
         list($response) = $this->getClickwrapsWithHttpInfo($account_id, $options);
         return $response;
@@ -2510,7 +2510,7 @@ class AccountsApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\Click\Model\ClickwrapVersionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getClickwrapsWithHttpInfo($account_id, \DocuSign\Click\Api\AccountsApi\GetClickwrapsOptions $options = null): array
+    public function getClickwrapsWithHttpInfo($account_id, ?\DocuSign\Click\Api\AccountsApi\GetClickwrapsOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {

@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\Click\ObjectSerializer;
  * @description Data used to start a bulk agreements export.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class BulkClickwrapRequest implements ModelInterface, ArrayAccess
@@ -188,7 +188,7 @@ class BulkClickwrapRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['from_date'] = isset($data['from_date']) ? $data['from_date'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;

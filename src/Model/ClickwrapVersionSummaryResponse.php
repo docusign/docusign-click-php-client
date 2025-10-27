@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -39,7 +39,7 @@ use DocuSign\Click\ObjectSerializer;
  * @category    Class
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
@@ -247,7 +247,7 @@ class ClickwrapVersionSummaryResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
         $this->container['clickwrap_id'] = isset($data['clickwrap_id']) ? $data['clickwrap_id'] : null;

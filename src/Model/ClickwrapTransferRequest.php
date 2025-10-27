@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\Click\ObjectSerializer;
  * @description Data used to transfer a clickwrap from one user to another.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class ClickwrapTransferRequest implements ModelInterface, ArrayAccess
@@ -183,7 +183,7 @@ class ClickwrapTransferRequest implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['transfer_from_user_id'] = isset($data['transfer_from_user_id']) ? $data['transfer_from_user_id'] : null;
         $this->container['transfer_to_user_id'] = isset($data['transfer_to_user_id']) ? $data['transfer_to_user_id'] : null;

@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\Click\ObjectSerializer;
  * @description Information about how an agreement is displayed.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class DisplaySettings implements ModelInterface, ArrayAccess
@@ -263,7 +263,7 @@ class DisplaySettings implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['action_button_alignment'] = isset($data['action_button_alignment']) ? $data['action_button_alignment'] : null;
         $this->container['allow_client_only'] = isset($data['allow_client_only']) ? $data['allow_client_only'] : null;

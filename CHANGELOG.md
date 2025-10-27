@@ -1,6 +1,11 @@
 # DocuSign Click PHP Client Changelog
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v1.4.2] - Click API v1-22.4.02.00 - 2025-10-16
+### Changed
+- Added explicit nullable type hints (?Type) to parameters that accept null, improving type safety and consistency.
+- Updated the SDK release version.
+
 ## [v1.4.1] - Click API v1-22.4.02.00 - 2024-04-22
 ### Changed
 - Adjusted the minimum required `firebase/php-jwt` package version to 6.0.

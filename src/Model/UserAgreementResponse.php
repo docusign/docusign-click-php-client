@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -39,7 +39,7 @@ use DocuSign\Click\ObjectSerializer;
  * @category    Class
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class UserAgreementResponse implements ModelInterface, ArrayAccess
@@ -76,7 +76,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
         'return_url' => '?string',
         'settings' => '\DocuSign\Click\Model\DisplaySettings',
         'status' => '?string',
-        'style' => '\DocuSign\Click\Model\UserAgreementResponseStyle',
+        'style' => 'map[string,?string]',
         'version' => '?string',
         'version_id' => '?string',
         'version_number' => '?int'
@@ -277,7 +277,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
         $this->container['agreed_on'] = isset($data['agreed_on']) ? $data['agreed_on'] : null;
@@ -737,7 +737,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Gets style
      *
-     * @return \DocuSign\Click\Model\UserAgreementResponseStyle
+     * @return map[string,?string]
      */
     public function getStyle()
     {
@@ -747,7 +747,7 @@ class UserAgreementResponse implements ModelInterface, ArrayAccess
     /**
      * Sets style
      *
-     * @param \DocuSign\Click\Model\UserAgreementResponseStyle $style style
+     * @param map[string,?string] $style This property specifies the custom style provided when the agreement was created by [customizing the template appearance][].    [customizing the template appearance]: /docs/click-api/click101/customize-elastic-template-appearance/
      *
      * @return $this
      */
