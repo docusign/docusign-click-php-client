@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\Click
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\Click\ObjectSerializer;
  * @description The results are paginated. Use the following properties to navigate the pages. Use the &#x60;page_number&#x60; query parameter to specify a page.  - &#x60;page&#x60;: The page number of the current results. - &#x60;pageSize&#x60;: The number of results in the current page. - &#x60;minimumPagesRemaining&#x60;: The number of pages that follow this one.
  * @package     DocuSign\Click
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
@@ -193,7 +193,7 @@ class ClickwrapVersionsResponse implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['clickwraps'] = isset($data['clickwraps']) ? $data['clickwraps'] : null;
         $this->container['minimum_pages_remaining'] = isset($data['minimum_pages_remaining']) ? $data['minimum_pages_remaining'] : null;
